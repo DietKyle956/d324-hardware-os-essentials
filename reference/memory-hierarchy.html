@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheet · Memory Hierarchy — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="ref-tag">Reference · prints clean</p>
+  <h1>Cheat Sheet — Memory Hierarchy</h1>
+
+  <table>
+    <tr><th>Level (fast → slow)</th><th>Key fact</th></tr>
+    <tr><td><strong>L1 cache</strong></td><td>Smallest · fastest · closest to the core</td></tr>
+    <tr><td><strong>L2 cache</strong></td><td>Middle — larger &amp; slower than L1</td></tr>
+    <tr><td><strong>L3 cache</strong></td><td>Largest &amp; slowest of the caches</td></tr>
+    <tr><td><strong>RAM</strong></td><td>Volatile main memory</td></tr>
+    <tr><td><strong>Virtual RAM</strong></td><td>Paging file <strong>on a drive</strong>; extends RAM</td></tr>
+    <tr><td><strong>Storage (SSD/HDD)</strong></td><td>Slowest · largest · permanent</td></tr>
+  </table>
+
+  <h2>Memory hooks</h2>
+  <ul>
+    <li><strong>L1 = level 1 = closest to the CPU = smallest and fastest.</strong> Level number up → size up, speed down.</li>
+    <li><strong>ROM is read-only and non-volatile</strong> — it holds firmware and doesn't change over the computer's life.</li>
+    <li><strong>Volatile</strong> (RAM/cache) loses data on power-off; <strong>non-volatile</strong> (ROM, SSD, HDD) keeps it.</li>
+  </ul>
+
+  <p class="footer"><a href="../lessons/0005-memory-hierarchy.html">← Back to Lesson 5</a></p>
+</div>
+</body>
+</html>
