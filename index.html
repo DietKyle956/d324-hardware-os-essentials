@@ -43,6 +43,8 @@
     padding: .45rem .8rem; border: 1px solid var(--border); border-radius: 999px; background: var(--card);
   }
   .links a:hover { border-color: var(--accent); color: var(--accent); }
+  li a { color: var(--accent); text-decoration: none; }
+  li a:hover { text-decoration: underline; }
   h2 { font-size: 1.15rem; margin: 2.25rem 0 .5rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border); }
   .module { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); font-weight: 600; margin: 0; }
   .unit { font-weight: 600; margin: 1.1rem 0 .35rem; font-size: .98rem; }
@@ -75,7 +77,7 @@
   <h2>Module 1 — Explains Design Decisions <span class="q">(33%)</span></h2>
   <p class="unit">Hardware <span class="q">Q6–16</span></p>
   <ul>
-    <li class="planned">Storage anatomy: platters, tracks, sectors, read/write heads <span class="badge">⚠ missed Q6</span></li>
+    <li><a href="lessons/0001-hard-drive-anatomy.html">Storage anatomy: platters, tracks, sectors, read/write heads</a> <span class="badge">⚠ missed Q6</span></li>
     <li class="planned">SSD vs HDD: trade-offs and when each wins</li>
     <li class="planned">Storage management: NVM scheduling and the file system interface</li>
     <li class="planned">Processor virtualization: hyper-threading (HTT)</li>
