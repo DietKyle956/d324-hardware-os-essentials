@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 7 · Thermal Troubleshooting — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Thermal Troubleshooting: Overheating &amp; Shutdowns</h1>
+  <p class="lead">The last Hardware lesson. When a machine overheats and shuts down, the fix is almost always airflow — not the battery, RAM, or OS.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll map the symptom (overheating + unexpected shutdown) straight to the right fix (clean the vents and fan), and you'll know why the other options don't address heat.
+  </div>
+
+  <h2>The symptom → cause → fix chain</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 120" role="img" aria-label="Flow from overheating and shutdown, to thermal problem, to cleaning vents and fan">
+      <rect x="10" y="35" width="130" height="50" rx="8" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="75" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">Overheats +</text>
+      <text x="75" y="73" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">shuts down</text>
+
+      <line x1="140" y1="60" x2="170" y2="60" stroke="#999999" stroke-width="2"/>
+
+      <rect x="170" y="35" width="120" height="50" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="230" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">Thermal</text>
+      <text x="230" y="73" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">problem</text>
+
+      <line x1="290" y1="60" x2="320" y2="60" stroke="#999999" stroke-width="2"/>
+
+      <rect x="320" y="35" width="130" height="50" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="385" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">Clean vents</text>
+      <text x="385" y="73" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">and fan</text>
+    </svg>
+    <figcaption>Overheating and unexpected shutdowns are thermal symptoms — and airflow is the usual culprit.</figcaption>
+  </figure>
+
+  <p>A processor generates heat, and a heatsink + fan carries it away through the vents. When <strong>dust clogs the vents or the fan</strong>, heat has nowhere to go. The CPU hits its temperature limit and the system <strong>throttles or shuts down</strong> to protect itself from damage.</p>
+
+  <h2>Why the other answers miss</h2>
+  <p>The exam's distractors each fix a different problem — just not heat:</p>
+  <table>
+    <tr><th>Option</th><th>What it actually fixes</th></tr>
+    <tr><td>Replace the battery</td><td>Power / charging problems — not heat</td></tr>
+    <tr><td>Upgrade the RAM</td><td>Memory capacity — not heat</td></tr>
+    <tr><td>Reinstall the operating system</td><td>Software corruption — not heat</td></tr>
+  </table>
+
+  <div class="callout">
+    <span class="label">Troubleshooting rule</span>
+    <strong>Overheating + shutdown = thermal → check airflow first.</strong> Clean the vents and fan with compressed air (cheapest, most common cause), then consider a failed fan or dried-out thermal paste if it persists.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">A laptop user notices their plugged-in device is overheating and shutting down unexpectedly. What is the most likely solution?</div>
+    <button class="quiz-opt">Replace the battery</button>
+    <button class="quiz-opt" data-why="Overheating + shutdowns point to a thermal problem. The most likely fix is to clean the dust-clogged cooling vents and fan to restore airflow.">Clean the cooling vents and fan</button>
+    <button class="quiz-opt">Upgrade the RAM</button>
+    <button class="quiz-opt">Reinstall the operating system</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which symptom most strongly suggests a thermal (heat) problem?</div>
+    <button class="quiz-opt">Slow file transfers</button>
+    <button class="quiz-opt" data-why="Shutting down under load (gaming, rendering) is a classic thermal symptom — the CPU hits its temperature limit and the system shuts off to protect itself.">Unexpected shutdowns under load</button>
+    <button class="quiz-opt">Pop-up advertisements</button>
+    <button class="quiz-opt">Forgotten passwords</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">What does thermal paste do?</div>
+    <button class="quiz-opt">Cools the battery</button>
+    <button class="quiz-opt" data-why="Thermal paste fills microscopic gaps between the CPU and the heatsink so heat transfers efficiently. Dried-out paste is a common cause of overheating.">Transfers heat from the CPU to the heatsink</button>
+    <button class="quiz-opt">Cleans the fan</button>
+    <button class="quiz-opt">Stores BIOS settings</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">Which fix is LEAST likely to resolve overheating?</div>
+    <button class="quiz-opt">Cleaning the vents</button>
+    <button class="quiz-opt">Replacing a failed fan</button>
+    <button class="quiz-opt" data-why="Reinstalling the OS fixes software problems, not heat. Overheating is a hardware/airflow issue — clean vents, replace fans, or reapply thermal paste.">Reinstalling the operating system</button>
+    <button class="quiz-opt">Reapplying thermal paste</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"How hot is too hot for a CPU?"</em> or <em>"What's thermal throttling?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0006-ram-technologies.html">← Lesson 6</a> ·
+      <a href="../reference/thermal-troubleshooting.html">Cheat sheet: thermal troubleshooting</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>✅ <strong>Hardware unit complete.</strong> Up next: Operating Systems — where the OS lives at runtime.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
