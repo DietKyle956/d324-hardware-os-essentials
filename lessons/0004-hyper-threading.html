@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4 · Hyper-Threading (HTT) — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Hyper-Threading (HTT): One Core, Two Processors</h1>
+  <p class="lead">The feature that lets a single physical processor act like two — plus the acronyms you should not mix it up with.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know what hyper-threading does, what it doesn't do, and what CMOS and PCI actually are — so Q11 and its look-alikes are automatic.
+  </div>
+
+  <h2>Physical cores vs logical processors</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 200" role="img" aria-label="Diagram showing one physical core splitting into two logical processors">
+      <rect x="160" y="66" width="140" height="52" rx="8" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="230" y="97" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">1 physical core</text>
+
+      <line x1="188" y1="118" x2="100" y2="148" stroke="#999999" stroke-width="2"/>
+      <line x1="272" y1="118" x2="360" y2="148" stroke="#999999" stroke-width="2"/>
+
+      <rect x="40" y="150" width="120" height="42" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="100" y="175" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">Logical processor 0</text>
+
+      <rect x="300" y="150" width="120" height="42" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="360" y="175" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">Logical processor 1</text>
+    </svg>
+    <figcaption>Hyper-threading exposes one physical core to the OS as two logical processors.</figcaption>
+  </figure>
+
+  <p><strong>Hyper-threading technology (HTT)</strong> — Intel's name for simultaneous multithreading — lets <strong>one physical processor perform as two processors at the same time</strong>. Each physical core shows up to the operating system as two <strong>logical processors</strong>, so the OS can schedule two threads on that one core.</p>
+
+  <p>It isn't two <em>physical</em> cores, and it doesn't double raw speed. The trick is that a core is often idle waiting on memory or a cache miss — HTT lets a second thread use those otherwise-wasted execution units in the same moment.</p>
+
+  <h2>Don't mix these up</h2>
+  <p>The exam pairs HTT with three unrelated hardware acronyms. Know all four:</p>
+
+  <table>
+    <tr><th>Term</th><th>What it is</th><th>What it does</th></tr>
+    <tr><td><strong>HTT</strong></td><td>Hyper-threading technology</td><td>One physical processor acts as two logical processors</td></tr>
+    <tr><td><strong>CMOS</strong></td><td>Complementary metal-oxide-semiconductor</td><td>Battery-backed chip that stores BIOS/UEFI settings</td></tr>
+    <tr><td><strong>PCI</strong></td><td>Peripheral component interconnect</td><td>Expansion bus for add-on cards (graphics, network, etc.)</td></tr>
+    <tr><td><strong>HDD</strong></td><td>Hard disk drive</td><td>Storage — from Lesson 1</td></tr>
+  </table>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">Which feature allows a single physical processor to perform as two processors at the same time?</div>
+    <button class="quiz-opt">CMOS (complementary metal oxide semiconductor)</button>
+    <button class="quiz-opt">PCI (peripheral component interconnect)</button>
+    <button class="quiz-opt">HDD (hard disk drive)</button>
+    <button class="quiz-opt" data-why="HTT (hyper-threading technology) lets one physical core appear as two logical processors, so the OS can run two threads on it simultaneously.">HTT (hyper-threading technology)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">HTT stands for…</div>
+    <button class="quiz-opt" data-why="HTT = hyper-threading technology, Intel's name for exposing one physical core as two logical processors.">Hyper-threading technology</button>
+    <button class="quiz-opt">Hyper transfer transport</button>
+    <button class="quiz-opt">High-throughput threading</button>
+    <button class="quiz-opt">Hypertext transport technology</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">CMOS is best described as…</div>
+    <button class="quiz-opt" data-why="CMOS (complementary metal-oxide-semiconductor) is the battery-backed chip that stores BIOS/UEFI settings like the system clock and boot order.">The chip that stores BIOS/UEFI settings</button>
+    <button class="quiz-opt">A high-speed expansion bus</button>
+    <button class="quiz-opt">A hyper-threading feature</button>
+    <button class="quiz-opt">A storage device</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">With hyper-threading, one physical core appears to the OS as…</div>
+    <button class="quiz-opt">One processor</button>
+    <button class="quiz-opt" data-why="HTT exposes each physical core as two logical processors — not two physical cores — so the OS can schedule two threads on that one core.">Two logical processors</button>
+    <button class="quiz-opt">Two physical cores</button>
+    <button class="quiz-opt">Four physical cores</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>. Public secondary reference: <a href="https://en.wikipedia.org/wiki/Hyper-threading">Hyper-threading</a> on Wikipedia.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"How is a logical processor different from a physical core?"</em> or <em>"What's a thread?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0003-storage-management.html">← Lesson 3</a> ·
+      <a href="../reference/hyper-threading.html">Cheat sheet: hyper-threading</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: Memory hierarchy — ROM, cache levels, and virtual RAM.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
