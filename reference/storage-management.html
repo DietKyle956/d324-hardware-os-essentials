@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheet · Storage Management — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="ref-tag">Reference · prints clean</p>
+  <h1>Cheat Sheet — Storage Management</h1>
+
+  <table>
+    <tr><th>Layer</th><th>Works in</th><th>Core job</th><th>Not its core job</th></tr>
+    <tr><td><strong>File system interface</strong></td><td>Files &amp; folders</td><td><strong>Access &amp; manage files</strong></td><td>Allocating blocks; security is secondary</td></tr>
+    <tr><td><strong>NVM scheduler</strong></td><td>Memory blocks</td><td><strong>Allocate non-volatile memory</strong></td><td>Performance/security/compatibility are side effects</td></tr>
+  </table>
+
+  <h2>Memory hook</h2>
+  <p><strong>File system = files. NVM scheduler = memory blocks.</strong><br>
+  One gives you files to manage; the other decides where the bits physically go.</p>
+
+  <h2>Key facts</h2>
+  <ul>
+    <li><strong>NVM</strong> = non-volatile memory (keeps data without power — SSD/flash).</li>
+    <li><strong>NVM scheduling</strong> = managing the <em>allocation</em> of that memory.</li>
+    <li><strong>File system interface</strong> = the operations (create/open/read/write/delete) that let the system <em>access and manage files</em>.</li>
+  </ul>
+
+  <p class="footer"><a href="../lessons/0003-storage-management.html">← Back to Lesson 3</a></p>
+</div>
+</body>
+</html>
