@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 23 · Authentication and Defense — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Authentication and Defense</h1>
+  <p class="lead">Centralized logins and the two intrusion systems. Know which one is passive.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know a <strong>Domain Controller</strong> is the centralized authentication server (Q23), and an <strong>IDS</strong> is the passive defender (Q24) — while an IPS acts.
+  </div>
+
+  <h2>Centralized authentication</h2>
+  <p>A <strong>Domain Controller</strong> is the Windows server that centralizes <strong>authentication</strong>. Users log in once and the domain controller validates their credentials against a central directory, rather than each computer keeping its own user list.</p>
+
+  <h2>IDS vs IPS</h2>
+  <table>
+    <tr><th>Device</th><th>Behavior</th><th>Position</th></tr>
+    <tr><td><strong>IDS</strong> (intrusion detection system)</td><td><strong>Passive</strong> — watches and alerts, doesn't block</td><td>Monitors a copy of traffic</td></tr>
+    <tr><td><strong>IPS</strong> (intrusion prevention system)</td><td><strong>Active</strong> — detects and blocks/prevents</td><td>Sits inline in the traffic path</td></tr>
+  </table>
+
+  <p>The word to remember: an <strong>IDS</strong> only <strong>detects</strong> and alerts — it offers <strong>passive protection</strong>. An <strong>IPS</strong> <strong>prevents</strong>, actively dropping malicious traffic as it passes through.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    "Passive protection" = <strong>IDS</strong> (detect + alert only). "Prevents/blocks" = <strong>IPS</strong>. The letters tell you the job: <strong>D</strong>etection vs <strong>P</strong>revention.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which Windows tool is referred to as a centralized authentication server?</div>
+    <button class="quiz-opt" data-why="A Domain Controller centralizes authentication — users validate against it. The others are directory tools or non-Windows solutions.">Domain Controller</button>
+    <button class="quiz-opt">Directory Utility</button>
+    <button class="quiz-opt">Samba</button>
+    <button class="quiz-opt">Apache Directory</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which device offers passive protection against attacks on network- and cloud-based resources?</div>
+    <button class="quiz-opt">Intrusion prevention system (IPS)</button>
+    <button class="quiz-opt" data-why="An IDS (intrusion detection system) is passive — it monitors and alerts without blocking. An IPS actively prevents, which is not passive.">Intrusion detection system (IDS)</button>
+    <button class="quiz-opt">Unified threat management (UTM)</button>
+    <button class="quiz-opt">Remote access service (RAS)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which device actively blocks malicious traffic inline?</div>
+    <button class="quiz-opt" data-why="An IPS (prevention) sits inline and actively drops malicious traffic. An IDS only detects and alerts.">IPS</button>
+    <button class="quiz-opt">IDS</button>
+    <button class="quiz-opt">Domain Controller</button>
+    <button class="quiz-opt">Patch panel</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">The "D" in IDS stands for…</div>
+    <button class="quiz-opt">Domain</button>
+    <button class="quiz-opt" data-why="IDS = Intrusion Detection System — it detects and alerts (passive).">Detection</button>
+    <button class="quiz-opt">Prevention</button>
+    <button class="quiz-opt">Defense</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">What does a Domain Controller do?</div>
+    <button class="quiz-opt">Routes packets between networks</button>
+    <button class="quiz-opt">Blocks malware inline</button>
+    <button class="quiz-opt" data-why="A Domain Controller centralizes authentication — it validates user credentials against a central directory.">Centralizes user authentication</button>
+    <button class="quiz-opt">Balances load across servers</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354305">WGU course — Non-functional Requirements</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"Why would an org choose IDS over IPS?"</em> or <em>"What's Active Directory?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0022-dhcp-apipa.html">← Lesson 22</a> ·
+      <a href="../reference/authentication-defense.html">Cheat sheet: authentication &amp; defense</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0024-network-services.html">Network services: load balancing and CaaS</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

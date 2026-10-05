@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 31 · Web-stack Roles: Front-end vs Back-end — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Web-stack Roles: Front-end vs Back-end</h1>
+  <p class="lead">Two halves of a web app, and the databases behind the back end.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know <strong>TypeScript is a front-end skill</strong> (Q48), <strong>MongoDB is a cloud back-end database</strong> (Q49), and <strong>CouchDB handles document-based data</strong> (Q50).
+  </div>
+
+  <h2>Front-end vs back-end</h2>
+  <table>
+    <tr><th>Side</th><th>What it does</th><th>Examples</th></tr>
+    <tr><td><strong>Front-end</strong></td><td>The user interface — what runs in the browser</td><td><strong>TypeScript</strong>, JavaScript, Angular</td></tr>
+    <tr><td><strong>Back-end</strong></td><td>Servers, logic, and databases behind the scenes</td><td>Node, PHP, Java, <strong>MongoDB</strong>, MySQL</td></tr>
+  </table>
+
+  <p>The <strong>front end</strong> is everything the user sees and clicks. <strong>TypeScript</strong> (a typed JavaScript) is a front-end skill, so it's relevant for a front-end team.</p>
+
+  <p>The <strong>back end</strong> runs on servers and stores data. <strong>MongoDB</strong> (often just "Mongo") is a back-end database popular in <strong>cloud-based solutions</strong>. <strong>CouchDB</strong> is a document database, so it's the right tool for an organization handling <strong>document-based data</strong>. MySQL is a relational (SQL) database.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    Front-end = browser/UI (<strong>TypeScript</strong>). Back-end database = <strong>Mongo</strong> (cloud). Document data = <strong>CouchDB</strong>. Don't mistake JSON (a data format) or Node (a runtime) for a database.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">A hiring manager is interviewing for a front-end development team. Which skill is relevant?</div>
+    <button class="quiz-opt">Java</button>
+    <button class="quiz-opt">Python</button>
+    <button class="quiz-opt">MySQL</button>
+    <button class="quiz-opt" data-why="TypeScript is a front-end (browser/UI) language. Java, Python, and MySQL are back-end skills.">TypeScript</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which back-end database management system could an IT company use in cloud-based solutions?</div>
+    <button class="quiz-opt" data-why="MongoDB (Mongo) is a back-end database popular in cloud solutions. PHP is a language, Node is a runtime, and JSON is a data format.">Mongo</button>
+    <button class="quiz-opt">Hypertext Preprocessor (PHP)</button>
+    <button class="quiz-opt">Node</button>
+    <button class="quiz-opt">JavaScript Object Notation (JSON)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which tool is appropriate for an organization handling document-based data?</div>
+    <button class="quiz-opt" data-why="CouchDB is a document database — built for document-based data. MongoDB is also document-oriented but the exam pairs 'document-based' with CouchDB, while MySQL/SQL Server are relational.">CouchDB</button>
+    <button class="quiz-opt">MongoDB</button>
+    <button class="quiz-opt">MySQL</button>
+    <button class="quiz-opt">SQL Server</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which of these is a back-end language/runtime, not a front-end one?</div>
+    <button class="quiz-opt">TypeScript</button>
+    <button class="quiz-opt" data-why="PHP runs on the server (back end). TypeScript and JavaScript run in the browser (front end).">PHP</button>
+    <button class="quiz-opt">JavaScript</button>
+    <button class="quiz-opt">CSS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">Which of these is NOT a database?</div>
+    <button class="quiz-opt">MySQL</button>
+    <button class="quiz-opt">MongoDB</button>
+    <button class="quiz-opt" data-why="JSON is a data format, not a database. MySQL, MongoDB, and CouchDB are databases.">JSON</button>
+    <button class="quiz-opt">CouchDB</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354503">WGU course — Customization</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"What's the difference between MongoDB and MySQL?"</em> or <em>"Is Node front-end or back-end?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0030-network-roles.html">← Lesson 30</a> ·
+      <a href="../reference/web-stack-roles.html">Cheat sheet: web-stack roles</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0032-tech-stacks.html">Tech stacks and web servers</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

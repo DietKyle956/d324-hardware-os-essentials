@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 36 · Cloud Service Models: SaaS, IaaS, PaaS, HaaS — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Cloud Service Models: SaaS, IaaS, PaaS, HaaS</h1>
+  <p class="lead">Four ways the cloud is delivered, from a finished app down to raw hardware.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know a <strong>vendor-managed application</strong> (like a picture editor) is <strong>SaaS</strong> (Q60), and where IaaS, PaaS, and HaaS sit relative to it.
+  </div>
+
+  <h2>The four models</h2>
+  <table>
+    <tr><th>Model</th><th>What the provider gives you</th><th>Exam tell</th></tr>
+    <tr><td><strong>SaaS</strong></td><td>A finished, managed application</td><td>"vendor-managed app", "edit pictures"</td></tr>
+    <tr><td><strong>PaaS</strong></td><td>A platform to build/deploy your own apps</td><td>"develop/deploy without managing servers"</td></tr>
+    <tr><td><strong>IaaS</strong></td><td>Infrastructure — servers, storage, networking</td><td>"rent servers/storage/networking"</td></tr>
+    <tr><td><strong>HaaS</strong></td><td>Physical hardware as a service</td><td>"hardware"</td></tr>
+  </table>
+
+  <p><strong>Software as a Service (SaaS)</strong> is the most finished level: the vendor runs and manages the whole application, and you just use it. A <strong>vendor-managed cloud application that lets users edit pictures</strong> is SaaS.</p>
+
+  <p>Going down the stack, <strong>PaaS</strong> hands you a platform for building your own software, <strong>IaaS</strong> rents you the raw servers/storage/network, and <strong>HaaS</strong> provides the physical hardware itself.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    The keyword is <strong>"vendor-managed application."</strong> A ready-to-use app you don't build or maintain = <strong>SaaS</strong>. If you're <em>building</em> on a platform, it's PaaS; if you're <em>renting infrastructure</em>, it's IaaS.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which cloud service is exemplified by a vendor-managed application that allows users to edit pictures?</div>
+    <button class="quiz-opt" data-why="SaaS is a vendor-managed, ready-to-use application — like a picture editor you just use.">Software as a Service (SaaS)</button>
+    <button class="quiz-opt">Infrastructure as a Service (IaaS)</button>
+    <button class="quiz-opt">Platform as a Service (PaaS)</button>
+    <button class="quiz-opt">Hardware as a Service (HaaS)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">Which model gives developers a platform to build and deploy their own apps?</div>
+    <button class="quiz-opt">SaaS</button>
+    <button class="quiz-opt">IaaS</button>
+    <button class="quiz-opt" data-why="PaaS provides a platform (runtime, tools) for building and deploying apps without managing the underlying servers.">PaaS</button>
+    <button class="quiz-opt">HaaS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which model rents raw servers, storage, and networking?</div>
+    <button class="quiz-opt">SaaS</button>
+    <button class="quiz-opt" data-why="IaaS (Infrastructure as a Service) rents the raw infrastructure — servers, storage, networking.">IaaS</button>
+    <button class="quiz-opt">PaaS</button>
+    <button class="quiz-opt">HaaS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">Which model provides physical hardware itself as a service?</div>
+    <button class="quiz-opt">SaaS</button>
+    <button class="quiz-opt">PaaS</button>
+    <button class="quiz-opt">IaaS</button>
+    <button class="quiz-opt" data-why="HaaS (Hardware as a Service) provides physical hardware on a service basis.">HaaS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">A user opens a website and edits photos without installing anything. This is…</div>
+    <button class="quiz-opt" data-why="A ready-to-use, vendor-managed app (photo editor) delivered over the web is SaaS.">SaaS</button>
+    <button class="quiz-opt">PaaS</button>
+    <button class="quiz-opt">IaaS</button>
+    <button class="quiz-opt">HaaS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354530">WGU course — Cloud Computing</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"What's a real SaaS example?"</em> or <em>"How is HaaS different from IaaS?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0035-isolated-test-environments.html">← Lesson 35</a> ·
+      <a href="../reference/cloud-service-models.html">Cheat sheet: cloud service models</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>You've reached the end of the course. Review the cheat sheets and re-take the pre-assessment.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

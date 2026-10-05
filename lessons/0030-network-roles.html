@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30 · Network Roles: Client, Server, Peer — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Network Roles: Client, Server, Peer</h1>
+  <p class="lead">Who asks, who serves, and who does both. Assign the role by what the device does.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll assign roles by behavior: a <strong>requestor is a client</strong> (Q45, Q47), and a <strong>printer serving jobs is a server</strong> (Q46).
+  </div>
+
+  <h2>The three roles</h2>
+  <table>
+    <tr><th>Role</th><th>What it does</th><th>Exam tell</th></tr>
+    <tr><td><strong>Client</strong></td><td>Makes requests to a server</td><td>"makes requests", "browsing/editing"</td></tr>
+    <tr><td><strong>Server</strong></td><td>Provides a service to clients</td><td>"provides/prints/serves"</td></tr>
+    <tr><td><strong>Peer</strong></td><td>Acts as both client and server</td><td>"equal roles", "shares both ways"</td></tr>
+  </table>
+
+  <p>The rule: ask what the device <em>does</em>. An application that <strong>makes requests to a database</strong> is a <strong>client</strong>. A workstation used for spreadsheets and browsing is a <strong>client</strong> — it requests services. A printer that <strong>prints documents for users</strong> is a <strong>server</strong> — it provides a service.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    Don't think of "client" and "server" as hardware types — they're <em>roles</em>. The same box can be both. In these questions, the verb decides: <strong>requests → client</strong>, <strong>provides/serves → server</strong>.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">An application is configured to only make requests to a database on another computer. Which role does it play?</div>
+    <button class="quiz-opt" data-why="A device/application that makes requests to a server is a client.">Client</button>
+    <button class="quiz-opt">Server</button>
+    <button class="quiz-opt">Peer</button>
+    <button class="quiz-opt">Owner</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">A printer is configured to print documents for users. Which role should it be configured for?</div>
+    <button class="quiz-opt" data-why="A printer that provides a service (printing) to users acts as a server.">Server</button>
+    <button class="quiz-opt">Client</button>
+    <button class="quiz-opt">Peer</button>
+    <button class="quiz-opt">Requestor</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">A workstation used for editing spreadsheets and web browsing should be configured as a…</div>
+    <button class="quiz-opt" data-why="A workstation that requests services (web, file) is a client.">Client</button>
+    <button class="quiz-opt">Server</button>
+    <button class="quiz-opt">Router</button>
+    <button class="quiz-opt">Peer</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">Which role acts as both client and server?</div>
+    <button class="quiz-opt">Client</button>
+    <button class="quiz-opt">Server</button>
+    <button class="quiz-opt" data-why="A peer acts as both client and server — sharing resources both ways.">Peer</button>
+    <button class="quiz-opt">Router</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">The best way to determine a device's role is to ask…</div>
+    <button class="quiz-opt">What brand it is</button>
+    <button class="quiz-opt" data-why="Roles are determined by behavior: does the device make requests (client) or provide a service (server)?">Does it request or provide a service?</button>
+    <button class="quiz-opt">How much it costs</button>
+    <button class="quiz-opt">Where it's located</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354503">WGU course — Customization</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"Can one machine be both client and server?"</em> or <em>"What's a peer-to-peer network?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0029-capacity-planning.html">← Lesson 29</a> ·
+      <a href="../reference/network-roles.html">Cheat sheet: network roles</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0031-web-stack-roles.html">Web-stack roles: front-end vs back-end</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

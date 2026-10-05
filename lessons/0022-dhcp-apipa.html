@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 22 · Network Auto-configuration: DHCP and APIPA — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Network Auto-configuration: DHCP and APIPA</h1>
+  <p class="lead">How a machine gets an IP address automatically — and what happens when the server that hands them out is unreachable.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know that when a Windows DHCP client can't reach a DHCP server, <strong>APIPA</strong> steps in automatically — the exact distinction you missed (Q22).
+  </div>
+
+  <h2>Two automatic processes</h2>
+  <table>
+    <tr><th>Process</th><th>When it runs</th><th>What it does</th></tr>
+    <tr><td><strong>DHCP</strong></td><td>Normal startup</td><td>Server assigns IP address, subnet mask, gateway, DNS</td></tr>
+    <tr><td><strong>APIPA</strong></td><td>DHCP server is unreachable</td><td>Client self-assigns a link-local 169.254.x.x address</td></tr>
+  </table>
+
+  <p><strong>DHCP</strong> (Dynamic Host Configuration Protocol) is the normal way a device gets its network settings. The client asks the network for a DHCP server, and the server leases it an IP address plus configuration.</p>
+
+  <p><strong>APIPA</strong> (Automatic Private IP Addressing) is the fallback. If the Windows client <strong>cannot reach a DHCP server</strong>, it automatically assigns itself a link-local address in the <strong>169.254.0.0/16</strong> range. This lets the machine talk to others on the same local segment, but it has no internet access.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    The question's tell is <strong>"unable to reach a DHCP server."</strong> That's <strong>APIPA</strong>. Static IP is manual, a DHCP relay forwards requests to a server on another network (still needs the server), and RAS is remote access — none of them is the automatic fallback.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which automatic configuration process occurs when a Windows-based DHCP client is unable to reach a DHCP server?</div>
+    <button class="quiz-opt" data-why="APIPA (Automatic Private IP Addressing) kicks in automatically when the DHCP server is unreachable, assigning a 169.254.x.x link-local address.">Automatic private IP addressing (APIPA)</button>
+    <button class="quiz-opt">Static IP configuration</button>
+    <button class="quiz-opt">DHCP relay</button>
+    <button class="quiz-opt">Remote access service (RAS)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which process normally assigns a device its IP address, subnet mask, gateway, and DNS?</div>
+    <button class="quiz-opt">APIPA</button>
+    <button class="quiz-opt" data-why="DHCP is the normal automatic configuration — a server leases the client its IP address and other settings.">DHCP</button>
+    <button class="quiz-opt">Static IP configuration</button>
+    <button class="quiz-opt">RAS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">What address range does APIPA use?</div>
+    <button class="quiz-opt">192.168.x.x</button>
+    <button class="quiz-opt">10.x.x.x</button>
+    <button class="quiz-opt" data-why="APIPA self-assigns a link-local address in the 169.254.x.x range. 192.168.x.x and 10.x.x.x are private ranges used by DHCP.">169.254.x.x</button>
+    <button class="quiz-opt">172.16.x.x</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">A device with only an APIPA address can typically…</div>
+    <button class="quiz-opt">Reach the internet normally</button>
+    <button class="quiz-opt">Reach all LANs on the WAN</button>
+    <button class="quiz-opt">Resolve DNS names</button>
+    <button class="quiz-opt" data-why="APIPA only allows communication with other devices on the same local segment — no internet or cross-network access.">Talk to devices on the same local segment</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">A DHCP relay is used to…</div>
+    <button class="quiz-opt" data-why="A DHCP relay forwards DHCP requests to a server on a different network. It still needs a DHCP server; APIPA is the automatic fallback when none is reachable.">Forward DHCP requests to a server on another network</button>
+    <button class="quiz-opt">Assign a 169.254.x.x address</button>
+    <button class="quiz-opt">Set a static IP</button>
+    <button class="quiz-opt">Provide remote access</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354305">WGU course — Non-functional Requirements</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"How do I know if I have an APIPA address?"</em> or <em>"Is APIPA the same as a static IP?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0021-non-functional-requirements.html">← Lesson 21</a> ·
+      <a href="../reference/dhcp-apipa.html">Cheat sheet: DHCP &amp; APIPA</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0023-authentication-defense.html">Authentication and defense: Domain Controller, IDS vs IPS</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

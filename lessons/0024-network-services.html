@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 24 · Network Services: Load Balancing and CaaS — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Network Services: Load Balancing and CaaS</h1>
+  <p class="lead">Two services that keep things moving: one spreads traffic, the other spreads communication tools.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know <strong>load balancing</strong> distributes traffic across multiple servers (Q25), and <strong>Communications as a Service (CaaS)</strong> covers VoIP, instant messaging, and video collaboration (Q26).
+  </div>
+
+  <h2>Load balancing</h2>
+  <p><strong>Load balancing</strong> distributes incoming traffic <strong>across multiple servers</strong> that can each fulfill the same task. If one server is busy or fails, the load balancer routes work to the others — improving availability and performance.</p>
+
+  <h2>Communications as a Service (CaaS)</h2>
+  <p><strong>CaaS</strong> delivers communication capabilities over the internet/cloud — <strong>Voice over IP (VoIP)</strong>, <strong>instant messaging</strong>, and <strong>video collaboration</strong> — without the company hosting its own phone or conferencing infrastructure.</p>
+
+  <table>
+    <tr><th>Service</th><th>What it does</th><th>Exam tell</th></tr>
+    <tr><td><strong>Load balancing</strong></td><td>Spreads traffic across multiple servers</td><td>"distribute traffic across servers"</td></tr>
+    <tr><td><strong>CaaS</strong></td><td>Cloud-hosted communication tools</td><td>"VoIP, instant messaging, video"</td></tr>
+  </table>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    "Distribute traffic across servers doing the same task" = <strong>load balancing</strong>. Don't confuse it with web hosting (just serving sites) or centralized computing. For the "as a service" list, remember: <strong>CaaS = Communications</strong> (voice, messaging, video).
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which networking solution helps distribute traffic across multiple servers capable of fulfilling the same tasks?</div>
+    <button class="quiz-opt" data-why="Load balancing distributes traffic across multiple servers doing the same task, improving availability and performance.">Load balancing</button>
+    <button class="quiz-opt">Web hosting</button>
+    <button class="quiz-opt">Spam blocking</button>
+    <button class="quiz-opt">Centralized computing</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">Which category of services addresses needs like VoIP, instant messaging, and video collaboration?</div>
+    <button class="quiz-opt">Data as a Service (DaaS)</button>
+    <button class="quiz-opt">Business processes as a Service (BPaaS)</button>
+    <button class="quiz-opt">Hardware as a Service (HaaS)</button>
+    <button class="quiz-opt" data-why="Communications as a Service (CaaS) delivers communication tools — VoIP, instant messaging, video collaboration — over the cloud.">Communications as a Service (CaaS)</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">The "C" in CaaS stands for…</div>
+    <button class="quiz-opt">Cloud</button>
+    <button class="quiz-opt">Computing</button>
+    <button class="quiz-opt" data-why="CaaS = Communications as a Service — voice, messaging, and video collaboration.">Communications</button>
+    <button class="quiz-opt">Customer</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">A site has three identical web servers behind one address that spreads requests among them. This is…</div>
+    <button class="quiz-opt">Web hosting</button>
+    <button class="quiz-opt" data-why="Spreading requests across identical servers is load balancing.">Load balancing</button>
+    <button class="quiz-opt">Spam blocking</button>
+    <button class="quiz-opt">CaaS</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which is an example of a CaaS offering?</div>
+    <button class="quiz-opt" data-why="VoIP (Voice over IP) is a classic Communications-as-a-Service offering. The others are storage, database, and hardware services.">VoIP phone service</button>
+    <button class="quiz-opt">Cloud file storage</button>
+    <button class="quiz-opt">A hosted database</button>
+    <button class="quiz-opt">Rented servers</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354305">WGU course — Non-functional Requirements</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"How is load balancing different from clustering?"</em> or <em>"What else is in the 'as a service' family?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0023-authentication-defense.html">← Lesson 23</a> ·
+      <a href="../reference/network-services.html">Cheat sheet: network services</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0025-ides-text-editors.html">IDEs vs text editors</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
