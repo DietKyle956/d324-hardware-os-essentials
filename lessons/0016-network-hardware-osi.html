@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16 · Network Hardware by OSI Layer — D324</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div class="wrap">
+
+  <p class="course">D324 · Hardware &amp; Operating Systems Essentials</p>
+  <h1>Network Hardware by OSI Layer</h1>
+  <p class="lead">Four devices, two layers. Know what lives at Layer 2 and what provides centralized connectivity.</p>
+
+  <div class="callout">
+    <span class="label">The win</span>
+    By the end of this lesson you'll know a <strong>switch</strong> works at <strong>Layer 2</strong> and provides <strong>centralized connectivity</strong> (Q33) — and how it differs from patch panels, hubs, and routers.
+  </div>
+
+  <h2>The four devices</h2>
+  <table>
+    <tr><th>Device</th><th>OSI layer</th><th>What it does</th></tr>
+    <tr><td><strong>Patch panel</strong></td><td>Layer 1 (physical)</td><td>Passive termination point; organizes cable runs; no intelligence</td></tr>
+    <tr><td><strong>Hub</strong></td><td>Layer 1 (physical)</td><td>Repeats a signal out every port; no addressing</td></tr>
+    <tr><td><strong>Switch</strong></td><td>Layer 2 (data link)</td><td>Forwards frames to the specific port using MAC addresses</td></tr>
+    <tr><td><strong>Router</strong></td><td>Layer 3 (network)</td><td>Routes packets between different networks using IP addresses</td></tr>
+  </table>
+
+  <p>A <strong>switch</strong> operates at <strong>Layer 2</strong>. It learns which device is on which port by MAC address and sends each frame only to the intended port. That makes it the device that provides <strong>centralized connectivity</strong> — many devices plug into one switch and reach each other efficiently.</p>
+
+  <p>A <strong>router</strong> works one layer up, at <strong>Layer 3</strong>, moving packets <em>between</em> networks using IP addresses. A <strong>hub</strong> is a dumb Layer 1 repeater that floods every port. A <strong>patch panel</strong> isn't even powered — it's just a tidy place to terminate cables.</p>
+
+  <div class="callout">
+    <span class="label">The trap</span>
+    "Layer 2 + centralized connectivity" = <strong>switch</strong>. Hubs also give you a central box, but they're Layer 1 and don't forward by address — they flood. Routers are Layer 3 and connect <em>between</em> networks, not devices within one.
+  </div>
+
+  <h2>Retrieval practice</h2>
+  <p>Answer from memory before clicking.</p>
+
+  <div class="quiz" data-answer="2">
+    <div class="quiz-q">Which type of network hardware works at layer 2 and provides centralized connectivity?</div>
+    <button class="quiz-opt">Patch panels</button>
+    <button class="quiz-opt">Hubs</button>
+    <button class="quiz-opt" data-why="A switch works at Layer 2, forwards frames by MAC address, and provides centralized connectivity. Hubs are Layer 1, routers are Layer 3, and patch panels are passive.">Switches</button>
+    <button class="quiz-opt">Routers</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="3">
+    <div class="quiz-q">Which device routes packets between different networks using IP addresses?</div>
+    <button class="quiz-opt">Switch</button>
+    <button class="quiz-opt">Hub</button>
+    <button class="quiz-opt">Patch panel</button>
+    <button class="quiz-opt" data-why="A router works at Layer 3 and moves packets between networks using IP addresses.">Router</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">Which device repeats a signal out every port with no addressing intelligence?</div>
+    <button class="quiz-opt">Switch</button>
+    <button class="quiz-opt" data-why="A hub is a Layer 1 repeater that floods the signal out all ports — no MAC addressing. A switch forwards selectively.">Hub</button>
+    <button class="quiz-opt">Router</button>
+    <button class="quiz-opt">Patch panel</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="0">
+    <div class="quiz-q">Which device is a passive, unpowered termination point for organizing cables?</div>
+    <button class="quiz-opt" data-why="A patch panel is passive — it's a tidy termination point for cable runs, with no electronics or intelligence.">Patch panel</button>
+    <button class="quiz-opt">Hub</button>
+    <button class="quiz-opt">Switch</button>
+    <button class="quiz-opt">Router</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <div class="quiz" data-answer="1">
+    <div class="quiz-q">At which OSI layer does a switch operate?</div>
+    <button class="quiz-opt">Layer 1</button>
+    <button class="quiz-opt" data-why="A switch operates at Layer 2 (data link), forwarding frames by MAC address.">Layer 2</button>
+    <button class="quiz-opt">Layer 3</button>
+    <button class="quiz-opt">Layer 4</button>
+    <div class="quiz-feedback" hidden></div>
+  </div>
+
+  <h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354443">WGU course — Networking</a>.</p>
+
+  <div class="callout">
+    <span class="label">Ask a follow-up</span>
+    Anything unclear? Your agent is your teacher. Try: <em>"What's a MAC address?"</em> or <em>"Why is a hub worse than a switch?"</em>
+  </div>
+
+  <div class="footer">
+    <nav>
+      <a href="0015-topologies.html">← Lesson 15</a> ·
+      <a href="../reference/network-hardware-osi.html">Cheat sheet: network hardware</a> ·
+      <a href="../index.html">Course home</a>
+    </nav>
+    <p>Up next: <a href="0017-twisted-pair-cabling.html">Twisted-pair cabling</a>.</p>
+  </div>
+
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
