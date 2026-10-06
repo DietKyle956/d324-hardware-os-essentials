@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kernel Building Blocks Cheat Card</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Reference &middot; printable</p>
+  <h1>Kernel Building Blocks Cheat Card</h1>
+</header>
+
+  <table>
+    <tr><th>Building block</th><th>Manages</th><th>Exam tell</th></tr>
+    <tr><td><strong>Process control management</strong></td><td>Each process and its state</td><td>"tracks each process … run it or wait for an event"</td></tr>
+    <tr><td><strong>Memory management</strong></td><td>RAM allocation</td><td>"allocates memory"</td></tr>
+    <tr><td><strong>Scheduling and dispatch</strong></td><td>Order processes get the CPU</td><td>"which ready process is next"</td></tr>
+    <tr><td><strong>Secondary storage management</strong></td><td>Disk &amp; files</td><td>"storage / disk"</td></tr>
+  </table>
+
+  <h2>Process states</h2>
+  <p><strong>Ready</strong> — wants the CPU. <strong>Running</strong> — has the CPU. <strong>Waiting (blocked)</strong> — paused on an event (e.g. disk read). When the event completes, Waiting → Ready.</p>
+
+  <h2>Memory hook</h2>
+  <p><strong>Process control = tracks processes. Memory = RAM. Scheduling = picks next. Storage = disk.</strong> "Run it or wait for an event" is always <em>process control</em>.</p>
+
+  <footer class="lesson-footer">
+  <p>Full explanation: <a href="../lessons/0003-process-control-management.html">Lesson 3 &mdash; Kernel Building Blocks: Process Control Management</a>. Stuck? Ask your agent for extra practice.</p>
+</footer>
+</article>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

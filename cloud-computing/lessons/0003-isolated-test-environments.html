@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isolated Test Environments: VM vs Container &middot; Cloud Computing</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Cloud Computing &middot; Lesson 3</p>
+  <h1>Isolated Test Environments: VM vs Container</h1>
+  <p class="lead">When someone needs a safe, isolated place to test software, reach for a virtual machine.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know the solution for an <strong>isolated computing environment for testing software is to configure a virtual machine</strong> — the exact distinction you missed (Q59).</p>
+  </div>
+
+  <h2>The scenario</h2>
+  <p>Someone needs an <strong>isolated computing environment</strong> to test software safely. The right move is to <strong>configure a virtual machine</strong>. A VM gives a complete, isolated computer — its own OS and virtual hardware — so tests can't touch the physical machine.</p>
+
+  <table>
+    <tr><th>Option</th><th>Is it an isolated test environment?</th></tr>
+    <tr><td><strong>Configuring a virtual machine</strong></td><td>Yes — full isolated environment for testing</td></tr>
+    <tr><td>Cloud-based storage</td><td>No — stores files, doesn't run/isolate tests</td></tr>
+    <tr><td>Creating a container</td><td>Isolates an app, but shares the host OS — not a full environment</td></tr>
+    <tr><td>Adding more memory</td><td>No — performance, not isolation</td></tr>
+  </table>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>The exam's answer for "isolated environment for testing software" is <strong>configure a virtual machine</strong>. A container also isolates, but it's lighter-weight and shares the host OS — the OA treats the VM as the complete isolated test environment. Storage and RAM don't provide isolation at all.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 3 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Configuring a virtual machine for the user" data-explanation="A virtual machine provides a complete, isolated environment (own OS + virtual hardware) for safe testing.">
+    <p class="quiz-prompt">Which solution provides a user with an isolated computing environment for testing software?</p>
+    <div class="quiz-options">
+      <button data-choice="Configuring a virtual machine for the user">Configuring a virtual machine for the user</button>
+      <button data-choice="Setting up cloud-based storage for the user">Setting up cloud-based storage for the user</button>
+      <button data-choice="Helping the user create a virtualized container">Helping the user create a virtualized container</button>
+      <button data-choice="Adding more memory to the user&#x27;s computer">Adding more memory to the user's computer</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="It has its own OS and virtual hardware" data-explanation="A VM has its own guest OS and virtual hardware, so what happens inside stays inside — it can&#x27;t touch the host.">
+    <p class="quiz-prompt">Why does a VM provide strong isolation for testing?</p>
+    <div class="quiz-options">
+      <button data-choice="It shares the host OS">It shares the host OS</button>
+      <button data-choice="It only stores files">It only stores files</button>
+      <button data-choice="It has its own OS and virtual hardware">It has its own OS and virtual hardware</button>
+      <button data-choice="It adds more RAM">It adds more RAM</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Process isolation sharing the host OS" data-explanation="A container isolates at the process level and shares the host OS — lighter than a VM, but not a full separate environment.">
+    <p class="quiz-prompt">Compared to a VM, a container provides…</p>
+    <div class="quiz-options">
+      <button data-choice="Full machine-level isolation with its own OS">Full machine-level isolation with its own OS</button>
+      <button data-choice="Process isolation sharing the host OS">Process isolation sharing the host OS</button>
+      <button data-choice="More storage">More storage</button>
+      <button data-choice="A dedicated guest OS">A dedicated guest OS</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Cloud-based storage" data-explanation="Cloud storage just stores files — it doesn&#x27;t run or isolate software. VMs, sandboxes, and containers all isolate execution.">
+    <p class="quiz-prompt">Which of these does NOT provide an isolated testing environment?</p>
+    <div class="quiz-options">
+      <button data-choice="A virtual machine">A virtual machine</button>
+      <button data-choice="A sandbox">A sandbox</button>
+      <button data-choice="A container">A container</button>
+      <button data-choice="Cloud-based storage">Cloud-based storage</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Performance, not isolation" data-explanation="More RAM helps performance, not isolation — it can&#x27;t create a safe environment for testing software.">
+    <p class="quiz-prompt">Adding more memory to a computer helps with…</p>
+    <div class="quiz-options">
+      <button data-choice="Performance, not isolation">Performance, not isolation</button>
+      <button data-choice="Isolating software">Isolating software</button>
+      <button data-choice="Storing files in the cloud">Storing files in the cloud</button>
+      <button data-choice="Running a hypervisor">Running a hypervisor</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354530">WGU course — Cloud Computing</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"When would I pick a container over a VM?"</em> or <em>"Is a sandbox the same as a VM?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/isolated-test-environments.html">Isolated Test Environments: VM vs Container</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

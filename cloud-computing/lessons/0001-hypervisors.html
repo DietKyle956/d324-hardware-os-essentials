@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypervisors: Type 1 vs Type 2 &middot; Cloud Computing</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Cloud Computing &middot; Lesson 1</p>
+  <h1>Hypervisors: Type 1 vs Type 2</h1>
+  <p class="lead">Two ways to run virtual machines. Know where each hypervisor sits in the stack.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know a <strong>type 2 hypervisor runs on top of the host operating system</strong> — the exact distinction you missed (Q55).</p>
+  </div>
+
+  <h2>The two types</h2>
+  <table>
+    <tr><th>Type</th><th>Runs on</th><th>Also called</th><th>Example</th></tr>
+    <tr><td><strong>Type 1</strong></td><td>Directly on physical hardware</td><td>Bare-metal</td><td>VMware ESXi, Hyper-V</td></tr>
+    <tr><td><strong>Type 2</strong></td><td>On top of a <strong>host operating system</strong></td><td>Hosted</td><td>VirtualBox, VMware Workstation</td></tr>
+  </table>
+
+  <p>A <strong>type 2 hypervisor</strong> is an application installed on an existing OS (Windows, macOS, Linux). It <strong>operates on the host operating system</strong>, and guest VMs run above it. That's why it's called "hosted."</p>
+
+  <p>A <strong>type 1 hypervisor</strong> skips the host OS entirely and installs directly on the <strong>physical hardware</strong> — more efficient, used in data centers.</p>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>The question asks where a <strong>type 2</strong> hypervisor operates: on the <strong>host operating system</strong>. Type 1 operates on the physical hardware. Don't pick "guest operating system" or "virtual application" — those sit above the hypervisor, not below it.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 1 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Host operating system" data-explanation="A type 2 hypervisor runs on top of the host operating system (it&#x27;s a hosted application). Type 1 runs directly on hardware.">
+    <p class="quiz-prompt">Which layer does a type 2 hypervisor operate on in a virtual environment?</p>
+    <div class="quiz-options">
+      <button data-choice="Host operating system">Host operating system</button>
+      <button data-choice="Physical hardware">Physical hardware</button>
+      <button data-choice="Guest operating system">Guest operating system</button>
+      <button data-choice="Virtual application">Virtual application</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Physical hardware" data-explanation="A type 1 (bare-metal) hypervisor installs directly on the physical hardware — no host OS.">
+    <p class="quiz-prompt">Which layer does a type 1 hypervisor run on?</p>
+    <div class="quiz-options">
+      <button data-choice="Host operating system">Host operating system</button>
+      <button data-choice="Physical hardware">Physical hardware</button>
+      <button data-choice="Guest operating system">Guest operating system</button>
+      <button data-choice="A web browser">A web browser</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Bare-metal hypervisor" data-explanation="Type 1 hypervisors are called bare-metal because they run directly on hardware.">
+    <p class="quiz-prompt">Another name for a type 1 hypervisor is…</p>
+    <div class="quiz-options">
+      <button data-choice="Hosted hypervisor">Hosted hypervisor</button>
+      <button data-choice="Application">Application</button>
+      <button data-choice="Bare-metal hypervisor">Bare-metal hypervisor</button>
+      <button data-choice="Container">Container</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="VirtualBox" data-explanation="VirtualBox is a type 2 hypervisor — it installs as an application on a host OS. ESXi and Hyper-V are type 1.">
+    <p class="quiz-prompt">Which is an example of a type 2 (hosted) hypervisor?</p>
+    <div class="quiz-options">
+      <button data-choice="VirtualBox">VirtualBox</button>
+      <button data-choice="VMware ESXi">VMware ESXi</button>
+      <button data-choice="Hyper-V">Hyper-V</button>
+      <button data-choice="A bare-metal server">A bare-metal server</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="A host operating system" data-explanation="A type 2 hypervisor needs a host OS already installed — it runs as an application on top of it.">
+    <p class="quiz-prompt">A type 2 hypervisor requires…</p>
+    <div class="quiz-options">
+      <button data-choice="No operating system at all">No operating system at all</button>
+      <button data-choice="A host operating system">A host operating system</button>
+      <button data-choice="A guest OS only">A guest OS only</button>
+      <button data-choice="Dedicated hardware">Dedicated hardware</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354530">WGU course — Cloud Computing</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Why is type 1 faster than type 2?"</em> or <em>"Is Hyper-V type 1 or type 2?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/hypervisors.html">Hypervisors: Type 1 vs Type 2</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

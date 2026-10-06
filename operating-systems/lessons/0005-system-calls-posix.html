@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Calls and the POSIX API &middot; Operating Systems</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Operating Systems &middot; Lesson 5</p>
+  <h1>System Calls and the POSIX API</h1>
+  <p class="lead">Programs talk to the kernel through system calls. POSIX standardizes those calls with short, generic names — and that's exactly how you tell them apart from Windows.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know <strong><code>Read()</code></strong> is the POSIX-style call, while <code>CreateProcess()</code>, <code>CreateFile()</code>, and <code>TerminateProcess()</code> are Windows API style — the exact distinction you missed (Q5).</p>
+  </div>
+
+  <h2>What a system call is</h2>
+  <p>A <strong>system call</strong> is the programmatic interface between applications and the operating system's kernel. When a program needs the OS to do something privileged — read a file, start a process, allocate memory — it requests it via a <strong>system call</strong>. The program says "OS, please do this," and the kernel carries it out.</p>
+
+  <h2>POSIX vs the Windows API</h2>
+  <p><strong>POSIX</strong> (Portable Operating System Interface) is a standard API that lets programs work the same way across UNIX-like systems — <strong>UNIX, Linux, and macOS</strong>. It uses short, generic, lowercase names: <code>read()</code>, <code>write()</code>, <code>open()</code>, <code>close()</code>, <code>fork()</code>, <code>exec()</code>.</p>
+
+  <p>The <strong>Windows API</strong> (Win32) uses a different naming style — longer, capitalized, "action + noun" names like <code>CreateProcess()</code>, <code>CreateFile()</code>, and <code>TerminateProcess()</code>.</p>
+
+  <table>
+    <tr><th>Style</th><th>Used by</th><th>Example calls</th><th>Naming feel</th></tr>
+    <tr><td><strong>POSIX</strong></td><td>UNIX, Linux, macOS</td><td><code>read()</code>, <code>write()</code>, <code>open()</code>, <code>fork()</code></td><td>Short, generic, verb-only</td></tr>
+    <tr><td><strong>Windows API</strong></td><td>Windows</td><td><code>CreateProcess()</code>, <code>CreateFile()</code>, <code>TerminateProcess()</code></td><td>Long, "Create…" / "Terminate…"</td></tr>
+  </table>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>The exam asks for a system call used by the <strong>POSIX API</strong>. That's <code>Read()</code> — short and generic. The other three options are Windows API calls, recognizable by <strong>Create…</strong> and <strong>Terminate…</strong> prefixes. When you see UNIX/Linux/macOS, think short names.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 5 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Read()" data-explanation="Read() is a POSIX-style system call — short and generic. CreateProcess(), CreateFile(), and TerminateProcess() are Windows API calls, not POSIX.">
+    <p class="quiz-prompt">What is an example of a system call used by the POSIX API for POSIX-based systems running UNIX, Linux, and macOS?</p>
+    <div class="quiz-options">
+      <button data-choice="CreateProcess()">CreateProcess()</button>
+      <button data-choice="CreateFile()">CreateFile()</button>
+      <button data-choice="Read()">Read()</button>
+      <button data-choice="TerminateProcess()">TerminateProcess()</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="UNIX, Linux, and macOS" data-explanation="POSIX (Portable Operating System Interface) standardizes APIs for UNIX-like systems — UNIX, Linux, and macOS. Windows uses its own Win32 API.">
+    <p class="quiz-prompt">POSIX is an API standard for which family of systems?</p>
+    <div class="quiz-options">
+      <button data-choice="UNIX, Linux, and macOS">UNIX, Linux, and macOS</button>
+      <button data-choice="Windows only">Windows only</button>
+      <button data-choice="Android and iOS only">Android and iOS only</button>
+      <button data-choice="All operating systems">All operating systems</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="CreateProcess()" data-explanation="CreateProcess() is the Windows API naming style (Create…/Terminate…). read(), write(), and open() are short POSIX-style names.">
+    <p class="quiz-prompt">Which of these is a Windows API–style system call?</p>
+    <div class="quiz-options">
+      <button data-choice="read()">read()</button>
+      <button data-choice="CreateProcess()">CreateProcess()</button>
+      <button data-choice="write()">write()</button>
+      <button data-choice="open()">open()</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="CreateFile()" data-explanation="CreateFile() uses the Windows API naming style. POSIX calls are short and generic — read(), write(), open().">
+    <p class="quiz-prompt">Which of these is NOT a POSIX-style system call?</p>
+    <div class="quiz-options">
+      <button data-choice="read()">read()</button>
+      <button data-choice="write()">write()</button>
+      <button data-choice="open()">open()</button>
+      <button data-choice="CreateFile()">CreateFile()</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="A program&#x27;s request for a service from the OS kernel" data-explanation="A system call is how a program requests a service from the OS kernel — like reading a file or starting a process. It&#x27;s the programmatic interface to the OS.">
+    <p class="quiz-prompt">What is a system call?</p>
+    <div class="quiz-options">
+      <button data-choice="A program&#x27;s request for a service from the OS kernel">A program's request for a service from the OS kernel</button>
+      <button data-choice="A phone call between two servers">A phone call between two servers</button>
+      <button data-choice="A hardware interrupt">A hardware interrupt</button>
+      <button data-choice="A GUI menu item">A GUI menu item</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354139">WGU course — Operating Systems</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"What does fork() do?"</em> or <em>"Can a Windows program use POSIX calls?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/system-calls-posix.html">System Calls and the POSIX API</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

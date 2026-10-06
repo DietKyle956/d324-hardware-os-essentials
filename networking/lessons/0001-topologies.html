@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Topologies &middot; Networking</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Networking &middot; Lesson 1</p>
+  <h1>Network Topologies</h1>
+  <p class="lead">Four basic layouts — bus, star, ring, mesh. Know each one's cost, ease, and failure story.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know <strong>bus</strong> is cheap and easy to install but hard to reconfigure (Q32), and <strong>mesh</strong> provides multiple pathways between nodes (Q35).</p>
+  </div>
+
+  <h2>The four layouts</h2>
+  <table>
+    <tr><th>Topology</th><th>Shape</th><th>Strengths</th><th>Weaknesses</th></tr>
+    <tr><td><strong>Bus</strong></td><td>All nodes tap one backbone cable</td><td>Cheap, easy to install</td><td>Hard to reconfigure; a break affects all</td></tr>
+    <tr><td><strong>Star</strong></td><td>All nodes connect to a central hub/switch</td><td>Easy to add/remove nodes; easy to troubleshoot</td><td>Central device is a single point of failure</td></tr>
+    <tr><td><strong>Ring</strong></td><td>Each node connects to two neighbors in a loop</td><td>Orderly, predictable data flow</td><td>A break can disable the loop</td></tr>
+    <tr><td><strong>Mesh</strong></td><td>Nodes connect to many others</td><td>Multiple paths; very fault-tolerant</td><td>Expensive; lots of cabling</td></tr>
+  </table>
+
+  <p>A <strong>bus</strong> uses a single backbone cable everyone taps into. It's cheap and simple to install — but because everything rides one cable, it's <strong>difficult to reconfigure</strong>, and one break can take the whole segment down.</p>
+
+  <p>A <strong>mesh</strong> connects nodes to multiple other nodes, giving <strong>multiple pathways</strong> between any two. If one link fails, traffic reroutes. That redundancy costs more cabling and money.</p>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>"Cheap and easy to install but difficult to reconfigure" is <strong>bus</strong>. Don't confuse it with star (easy to reconfigure via the central device) or mesh (fault-tolerant but <em>not</em> cheap). And "multiple pathways" always means <strong>mesh</strong>.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 1 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Bus" data-explanation="A bus uses one backbone cable — cheap and easy to install, but hard to reconfigure and vulnerable to a single break.">
+    <p class="quiz-prompt">Which type of network topology is cheap and easy to install but difficult to reconfigure?</p>
+    <div class="quiz-options">
+      <button data-choice="Bus">Bus</button>
+      <button data-choice="Star">Star</button>
+      <button data-choice="Ring">Ring</button>
+      <button data-choice="Mesh">Mesh</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Mesh" data-explanation="Mesh connects nodes to multiple other nodes, creating multiple redundant pathways between any two endpoints.">
+    <p class="quiz-prompt">Which topology provides multiple pathways between end nodes?</p>
+    <div class="quiz-options">
+      <button data-choice="Ring">Ring</button>
+      <button data-choice="Bus">Bus</button>
+      <button data-choice="Star">Star</button>
+      <button data-choice="Mesh">Mesh</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Star" data-explanation="Star connects every node to a central hub/switch — easy to add/remove nodes and troubleshoot, but the center is a single point of failure.">
+    <p class="quiz-prompt">Which topology connects all nodes to a central hub or switch?</p>
+    <div class="quiz-options">
+      <button data-choice="Bus">Bus</button>
+      <button data-choice="Star">Star</button>
+      <button data-choice="Ring">Ring</button>
+      <button data-choice="Mesh">Mesh</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Ring" data-explanation="Ring connects each node to two neighbors, forming a loop that data travels around.">
+    <p class="quiz-prompt">Which topology passes data around a loop, with each node connected to two neighbors?</p>
+    <div class="quiz-options">
+      <button data-choice="Bus">Bus</button>
+      <button data-choice="Star">Star</button>
+      <button data-choice="Ring">Ring</button>
+      <button data-choice="Mesh">Mesh</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Mesh" data-explanation="Mesh is the most fault-tolerant because of its many redundant paths, but that redundancy means far more cabling and cost.">
+    <p class="quiz-prompt">Which topology is the most fault-tolerant but also the most expensive to cable?</p>
+    <div class="quiz-options">
+      <button data-choice="Bus">Bus</button>
+      <button data-choice="Star">Star</button>
+      <button data-choice="Ring">Ring</button>
+      <button data-choice="Mesh">Mesh</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354443">WGU course — Networking</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Which topology do modern offices actually use?"</em> or <em>"What does 'reconfigure' mean for a bus?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/topologies.html">Network Topologies</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

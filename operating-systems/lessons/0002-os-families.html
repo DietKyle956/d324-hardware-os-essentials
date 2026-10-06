@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OS Families: Client vs Server &middot; Operating Systems</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Operating Systems &middot; Lesson 2</p>
+  <h1>OS Families: Client vs Server</h1>
+  <p class="lead">Not all operating systems are the same kind. Learn to sort one into client, server, or mobile — and spot the "not an OS" trap.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll classify any OS on sight and catch distractors like Microsoft Azure, which looks like an OS but isn't.</p>
+  </div>
+
+  <h2>The client–server picture</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 180" role="img" aria-label="A server operating system in the center serving two client machines">
+      <rect x="185" y="65" width="90" height="52" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="230" y="88" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">Server OS</text>
+      <text x="230" y="104" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0b5cad">(e.g. RHEL)</text>
+
+      <rect x="30" y="70" width="90" height="42" rx="8" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="75" y="95" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">Client</text>
+
+      <rect x="340" y="70" width="90" height="42" rx="8" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="385" y="95" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">Client</text>
+
+      <line x1="120" y1="91" x2="180" y2="91" stroke="#999999" stroke-width="2"/>
+      <line x1="275" y1="91" x2="335" y2="91" stroke="#999999" stroke-width="2"/>
+    </svg>
+    <figcaption>A server OS serves many client machines — that's what makes it a "server" OS.</figcaption>
+  </figure>
+
+  <h2>Three real families — and one imposter</h2>
+  <table>
+    <tr><th>Family</th><th>Purpose</th><th>Examples</th></tr>
+    <tr><td><strong>Client (desktop)</strong></td><td>Interactive end-user workstations</td><td>Windows 11, macOS</td></tr>
+    <tr><td><strong>Server</strong></td><td>Serve many clients; host services</td><td><strong>Red Hat Enterprise Linux</strong>, Windows Server</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Phones &amp; tablets</td><td>Symbian OS, Android, iOS</td></tr>
+    <tr><td><strong>Not an OS</strong></td><td>Cloud computing platform</td><td>Microsoft Azure</td></tr>
+  </table>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p><strong>Microsoft Azure is a cloud platform, not an operating system.</strong> It provides hosted services (compute, storage, databases) that run <em>on top of</em> operating systems. Don't let the familiar name fool you.</p>
+  </div>
+
+  <p>A <strong>server OS</strong> is optimized to serve many clients at once and run services (web, database, authentication) reliably around the clock — often with no graphical desktop. A <strong>client OS</strong> is built for one interactive user at a workstation. A <strong>mobile OS</strong> targets phones and tablets.</p>
+
+  <section class="quiz" data-quiz-title="Lesson 2 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Red Hat Enterprise Linux" data-explanation="Red Hat Enterprise Linux is a server OS — built to host services for many clients. Windows 11 is a client OS, Symbian is mobile, and Azure is a cloud platform, not an OS.">
+    <p class="quiz-prompt">What is an example of a server operating system?</p>
+    <div class="quiz-options">
+      <button data-choice="Red Hat Enterprise Linux">Red Hat Enterprise Linux</button>
+      <button data-choice="Windows 11">Windows 11</button>
+      <button data-choice="Symbian OS">Symbian OS</button>
+      <button data-choice="Microsoft Azure">Microsoft Azure</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Windows 11" data-explanation="Windows 11 is a client OS for end-user desktops and laptops. Windows Server and RHEL are server OSes, and Symbian is a mobile OS.">
+    <p class="quiz-prompt">Which is a client (desktop) operating system?</p>
+    <div class="quiz-options">
+      <button data-choice="Windows Server">Windows Server</button>
+      <button data-choice="Red Hat Enterprise Linux">Red Hat Enterprise Linux</button>
+      <button data-choice="Windows 11">Windows 11</button>
+      <button data-choice="Symbian OS">Symbian OS</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="A mobile OS" data-explanation="Symbian was a mobile operating system for phones — neither a server OS nor a desktop OS.">
+    <p class="quiz-prompt">Symbian OS is best classified as…</p>
+    <div class="quiz-options">
+      <button data-choice="A server OS">A server OS</button>
+      <button data-choice="A mobile OS">A mobile OS</button>
+      <button data-choice="A cloud platform">A cloud platform</button>
+      <button data-choice="A client desktop OS">A client desktop OS</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Microsoft Azure" data-explanation="Microsoft Azure is a cloud computing platform (a set of hosted services), not an operating system. The other three are actual OSes.">
+    <p class="quiz-prompt">Which of these is NOT an operating system?</p>
+    <div class="quiz-options">
+      <button data-choice="Windows 11">Windows 11</button>
+      <button data-choice="Red Hat Enterprise Linux">Red Hat Enterprise Linux</button>
+      <button data-choice="Symbian OS">Symbian OS</button>
+      <button data-choice="Microsoft Azure">Microsoft Azure</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Serve many clients and host services" data-explanation="A server OS is optimized to serve many clients simultaneously and host services like web, database, and authentication.">
+    <p class="quiz-prompt">A server operating system is primarily designed to…</p>
+    <div class="quiz-options">
+      <button data-choice="Serve many clients and host services">Serve many clients and host services</button>
+      <button data-choice="Render graphics for games">Render graphics for games</button>
+      <button data-choice="Run on phones">Run on phones</button>
+      <button data-choice="Store files for a single user">Store files for a single user</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354139">WGU course — Operating Systems</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Can Windows be a server OS too?"</em> or <em>"What's headless Linux?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/os-families.html">OS Families: Client vs Server</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

@@ -1,148 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D324 — Hardware &amp; Operating Systems Essentials</title>
-<style>
-  :root {
-    --bg: #f7f6f3;
-    --fg: #1c1c1c;
-    --muted: #6b6b6b;
-    --accent: #0b5cad;
-    --card: #ffffff;
-    --border: #e4e2dd;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #161616;
-      --fg: #e8e6e1;
-      --muted: #9a9a9a;
-      --accent: #6aa9e8;
-      --card: #1e1e1e;
-      --border: #2c2c2c;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-  header h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .4rem; }
-  header p { color: var(--muted); margin: 0; }
-  .meta { margin-top: 1.25rem; padding: .9rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; font-size: .92rem; }
-  .meta strong { color: var(--accent); }
-  .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: .5rem; }
-  .links a {
-    color: var(--fg); text-decoration: none; font-size: .88rem;
-    padding: .45rem .8rem; border: 1px solid var(--border); border-radius: 999px; background: var(--card);
-  }
-  .links a:hover { border-color: var(--accent); color: var(--accent); }
-  li a { color: var(--accent); text-decoration: none; }
-  li a:hover { text-decoration: underline; }
-  h2 { font-size: 1.15rem; margin: 2.25rem 0 .5rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border); }
-  .module { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); font-weight: 600; margin: 0; }
-  .unit { font-weight: 600; margin: 1.1rem 0 .35rem; font-size: .98rem; }
-  ul { margin: 0; padding-left: 1.2rem; }
-  li { margin: .18rem 0; font-size: .92rem; }
-  li.planned { color: var(--muted); }
-  .q { color: var(--muted); font-size: .8rem; }
-  .badge { font-size: .72rem; font-weight: 600; color: #b26a00; }
-  footer { margin-top: 3rem; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--border); padding-top: 1rem; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D324 Study Guides</title>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>D324 — Hardware &amp; Operating Systems Essentials</h1>
-    <p>Study workspace for the WGU Objective Assessment.</p>
-  </header>
+<article class="lesson">
 
-  <div class="meta">
-    <strong>Mission:</strong> Pass the D324 OA — close the 15 gaps from the pre-assessment and reach
-    "Competent" in all three competency areas.
-  </div>
+<header>
+  <p class="course-mark">D324 &middot; Hardware &amp; Operating Systems Essentials</p>
+  <h1>D324 Study Guides</h1>
+  <p class="lede">One self-contained study site for the whole D324 objective
+  assessment: thirty-six lessons across eight topics, each with an
+  instant-feedback quiz, a printable cheat card for every lesson, and
+  every question type from the pre-assessment covered. Work straight
+  through from lesson 1, or open the menu (top left) and jump to any
+  lesson or cheat card. Every page works offline and prints cleanly for
+  revision.</p>
+  <p><a class="start-button" href="hardware/lessons/0001-hard-drive-anatomy.html">Start with lesson 1 &rarr;</a></p>
+</header>
 
-  <nav class="links">
-    <a href="ROADMAP.md">Roadmap</a>
-    <a href="MISSION.md">Mission</a>
-    <a href="RESOURCES.md">Resources</a>
-  </nav>
+<section>
+  <h2 id="how">How the site works</h2>
+  <ul>
+    <li><strong>One path.</strong> The thirty-six lessons form a single path,
+      starting with hard-drive anatomy and ending with the cloud service
+      models. Each lesson ends with <em>previous</em> and <em>next</em>
+      buttons that name the next lesson.</li>
+    <li><strong>Drill as you read.</strong> Every lesson ends in a quiz with
+      instant feedback &mdash; answer, see why, move on. The quiz score line
+      tracks your progress as you go.</li>
+    <li><strong>Close the gaps.</strong> Lessons that cover a question you
+      missed on the pre-assessment are called out, so you can prioritize the
+      highest-value material first.</li>
+    <li><strong>Carry the cards.</strong> Each lesson has a one-page cheat
+      card for the rules and definitions. Keep them open while drilling until
+      recognition is automatic.</li>
+  </ul>
+</section>
 
-  <h2>Module 1 — Explains Design Decisions <span class="q">(33%)</span></h2>
-  <p class="unit">Hardware <span class="q">Q6–16</span></p>
-  <ul>
-    <li><a href="lessons/0001-hard-drive-anatomy.html">Storage anatomy: platters, tracks, sectors, read/write heads</a> <span class="badge">⚠ missed Q6</span></li>
-    <li><a href="lessons/0002-ssd-vs-hdd.html">SSD vs HDD: trade-offs and when each wins</a></li>
-    <li><a href="lessons/0003-storage-management.html">Storage management: NVM scheduling and the file system interface</a></li>
-    <li><a href="lessons/0004-hyper-threading.html">Processor virtualization: hyper-threading (HTT)</a></li>
-    <li><a href="lessons/0005-memory-hierarchy.html">Memory hierarchy: ROM, L1/L2/L3 cache, virtual RAM</a> <span class="badge">⚠ missed Q13</span></li>
-    <li><a href="lessons/0006-ram-technologies.html">RAM technologies: DRAM vs SRAM, synchronous vs asynchronous, DDR SDRAM</a> <span class="badge">⚠ missed Q15</span></li>
-    <li><a href="lessons/0007-thermal-troubleshooting.html">Thermal troubleshooting: overheating, vents, fans</a></li>
-  </ul>
-  <p class="unit">Operating Systems <span class="q">Q1–5</span></p>
-  <ul>
-    <li><a href="lessons/0008-os-runtime.html">Where the OS lives at runtime: RAM as the system-code workspace</a></li>
-    <li><a href="lessons/0009-os-families.html">OS families: client vs server operating systems</a></li>
-    <li><a href="lessons/0010-process-control-management.html">Kernel building blocks: process control management</a> <span class="badge">⚠ missed Q3</span></li>
-    <li><a href="lessons/0011-os-interfaces.html">OS interfaces: GUI vs CLI trade-offs</a></li>
-    <li><a href="lessons/0012-system-calls-posix.html">System calls and the POSIX API</a> <span class="badge">⚠ missed Q5</span></li>
-  </ul>
-  <p class="unit">Virtual Environment <span class="q">Q17–20</span></p>
-  <ul>
-    <li><a href="lessons/0013-cloud-characteristics.html">Cloud characteristics: resource pooling, measured service, elasticity</a> <span class="badge">⚠ missed Q17</span></li>
-    <li><a href="lessons/0014-virtualization-tools.html">Virtualization tools: sandbox, test development, app/cross-platform virtualization</a></li>
-  </ul>
+<section>
+  <h2 id="courses">The course, topic by topic</h2>
+  <table class="prose-table">
+    <thead>
+      <tr><th>Topic</th><th>What you learn</th><th>Lessons</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="hardware/index.html">Hardware</a></td>
+        <td>Hard-drive anatomy, SSDs, storage management, hyper-threading, memory hierarchy, RAM technologies, and thermal troubleshooting.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><a href="operating-systems/index.html">Operating Systems</a></td>
+        <td>Where the OS lives at runtime, OS families, kernel building blocks, GUI vs CLI, and the POSIX system calls.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td><a href="virtual-environment/index.html">Virtual Environment</a></td>
+        <td>The five cloud characteristics and the four virtualization tools.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="networking/index.html">Networking</a></td>
+        <td>Topologies, network hardware by OSI layer, cabling, network scope, malware taxonomy, and social engineering.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="non-functional-requirements/index.html">Non-functional Requirements</a></td>
+        <td>Availability and reliability, DHCP and APIPA, authentication, and the network services.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="ides-text-editors/index.html">IDEs and Text Editors</a></td>
+        <td>IDEs versus editors, compiled versus interpreted languages, and OOP with PowerShell.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td><a href="customization/index.html">Customization</a></td>
+        <td>NAS storage, RAM capacity planning, network roles, web-stack roles, and tech stacks.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td><a href="cloud-computing/index.html">Cloud Computing</a></td>
+        <td>Hypervisors, containers, isolated test environments, and the cloud service models.</td>
+        <td>4</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-  <h2>Module 2 — Develops Topologies <span class="q">(33%)</span></h2>
-  <p class="unit">Networking <span class="q">Q32–40</span></p>
+<section>
+  <h2 id="cards">Cheat cards</h2>
+  <p>One printable card per lesson, grouped by topic. Open a topic to see its
+  cards:</p>
   <ul>
-    <li><a href="lessons/0015-topologies.html">Topologies: bus, star, ring, mesh</a> <span class="badge">⚠ missed Q32</span></li>
-    <li><a href="lessons/0016-network-hardware-osi.html">Network hardware by OSI layer: patch panels, hubs, switches, routers</a></li>
-    <li><a href="lessons/0017-twisted-pair-cabling.html">Twisted-pair cabling: Category ratings and speeds</a> <span class="badge">⚠ missed Q34</span></li>
-    <li><a href="lessons/0018-network-scope.html">Network scope: PAN, LAN, MAN, WAN</a></li>
-    <li><a href="lessons/0019-malware-taxonomy.html">Malware taxonomy: armored, boot-sector, companion, macro, polymorphic</a> <span class="badge">⚠ missed Q37</span></li>
-    <li><a href="lessons/0020-social-engineering.html">Attack vectors: social engineering and related threats</a></li>
+    <li><a href="hardware/index.html#cards">Hardware cards</a> &mdash; platters, SSDs, memory, and cooling.</li>
+    <li><a href="operating-systems/index.html#cards">Operating Systems cards</a> &mdash; runtime, kernel, interfaces, POSIX.</li>
+    <li><a href="virtual-environment/index.html#cards">Virtual Environment cards</a> &mdash; cloud characteristics, virtualization tools.</li>
+    <li><a href="networking/index.html#cards">Networking cards</a> &mdash; topologies, hardware, cabling, malware.</li>
+    <li><a href="non-functional-requirements/index.html#cards">Non-functional Requirements cards</a> &mdash; NFRs, APIPA, defense, services.</li>
+    <li><a href="ides-text-editors/index.html#cards">IDEs and Text Editors cards</a> &mdash; IDEs, languages, paradigms.</li>
+    <li><a href="customization/index.html#cards">Customization cards</a> &mdash; NAS, capacity, roles, stacks.</li>
+    <li><a href="cloud-computing/index.html#cards">Cloud Computing cards</a> &mdash; hypervisors, containers, service models.</li>
   </ul>
-  <p class="unit">Non-functional Requirements <span class="q">Q21–26</span></p>
-  <ul>
-    <li><a href="lessons/0021-non-functional-requirements.html">Non-functional requirements: availability, reliability, usability, scalability</a></li>
-    <li><a href="lessons/0022-dhcp-apipa.html">Network auto-configuration: DHCP and APIPA</a> <span class="badge">⚠ missed Q22</span></li>
-    <li><a href="lessons/0023-authentication-defense.html">Authentication and defense: Domain Controller, IDS vs IPS</a></li>
-    <li><a href="lessons/0024-network-services.html">Network services: load balancing and Communications-as-a-Service</a></li>
-  </ul>
-  <p class="unit">IDEs and Text Editors <span class="q">Q27–31</span></p>
-  <ul>
-    <li><a href="lessons/0025-ides-text-editors.html">IDEs vs text editors: choosing the right tool</a></li>
-    <li><a href="lessons/0026-language-models.html">Language models: compiled vs interpreted/scripting</a></li>
-    <li><a href="lessons/0027-paradigms-tools.html">Paradigms and tools: OOP languages (C++) and PowerShell cmdlets</a></li>
-  </ul>
+</section>
 
-  <h2>Module 3 — Explains Configuration and Deployment <span class="q">(33%)</span></h2>
-  <p class="unit">Customization <span class="q">Q41–54</span></p>
-  <ul>
-    <li><a href="lessons/0028-storage-configuration.html">Storage configuration: NAS sizing, rotational speed, energy</a></li>
-    <li><a href="lessons/0029-capacity-planning.html">Capacity planning: RAM arithmetic</a></li>
-    <li><a href="lessons/0030-network-roles.html">Network roles: client, server, peer</a></li>
-    <li><a href="lessons/0031-web-stack-roles.html">Web-stack roles: front-end vs back-end and databases</a></li>
-    <li><a href="lessons/0032-tech-stacks.html">Tech stacks and web servers: Apache, frameworks</a> <span class="badge">⚠ missed Q52</span></li>
-  </ul>
-  <p class="unit">Cloud Computing <span class="q">Q55–60</span></p>
-  <ul>
-    <li><a href="lessons/0033-hypervisors.html">Hypervisors: type 1 vs type 2</a> <span class="badge">⚠ missed Q55</span></li>
-    <li><a href="lessons/0034-containers.html">Containers: process isolation and the shared host OS</a> <span class="badge">⚠ missed Q57, Q58</span></li>
-    <li><a href="lessons/0035-isolated-test-environments.html">Isolated test environments: VM vs container</a> <span class="badge">⚠ missed Q59</span></li>
-    <li><a href="lessons/0036-cloud-service-models.html">Cloud service models: SaaS, IaaS, PaaS, HaaS</a></li>
-  </ul>
+<section>
+  <h2 id="resources">Resources</h2>
+  <p><a href="resources.html">The resources page</a> &mdash; the WGU course
+  provisions behind each topic, plus the coaching report and study
+  communities.</p>
+</section>
 
-  <footer>
-    Lessons are authored one at a time and linked here as they ship. ⚠ marks a question missed on the pre-assessment.
-  </footer>
-</div>
+<footer class="lesson-footer">
+  <p>Stuck on anything here? Ask your agent &mdash; it can re-explain any
+  lesson, generate extra practice questions, or walk through an example step
+  by step.</p>
+</footer>
+
+</article>
+<script src="assets/nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Memory Hierarchy: ROM, Cache, RAM, Virtual RAM &middot; Hardware</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Hardware &middot; Lesson 5</p>
+  <h1>The Memory Hierarchy: ROM, Cache, RAM, Virtual RAM</h1>
+  <p class="lead">One ladder of memory, from the tiny-and-fast to the large-and-slow. Learn it once and three exam questions (Q12, Q13, Q14) answer themselves.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know the speed/size ladder cold — including the one you missed: <strong>L1 cache is the smallest but fastest</strong> (Q13).</p>
+  </div>
+
+  <h2>The speed/size ladder</h2>
+  <p>Memory trades off <strong>speed</strong> against <strong>size</strong>. The closer a memory sits to the CPU, the faster it is — and the smaller it has to be.</p>
+
+  <figure>
+    <svg viewBox="0 0 460 340" role="img" aria-label="Ladder of the memory hierarchy from L1 cache at the top to storage at the bottom">
+      <text x="16" y="30" font-family="sans-serif" font-size="12" fill="#666">↑ faster · smaller</text>
+
+      <rect x="60" y="10" width="300" height="44" rx="6" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="210" y="37" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">L1 cache — smallest · fastest</text>
+
+      <rect x="60" y="64" width="300" height="44" rx="6" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="210" y="91" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">L2 cache</text>
+
+      <rect x="60" y="118" width="300" height="44" rx="6" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="210" y="145" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">L3 cache — largest · slowest of the caches</text>
+
+      <rect x="60" y="172" width="300" height="44" rx="6" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="210" y="199" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">RAM (main memory)</text>
+
+      <rect x="60" y="226" width="300" height="44" rx="6" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="210" y="253" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Virtual RAM (paging file on drive)</text>
+
+      <rect x="60" y="280" width="300" height="44" rx="6" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="210" y="307" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Storage — SSD / HDD</text>
+
+      <text x="16" y="325" font-family="sans-serif" font-size="12" fill="#666">↓ slower · larger</text>
+    </svg>
+    <figcaption>Each step down is slower and larger than the one above it.</figcaption>
+  </figure>
+
+  <h2>The three answers you need</h2>
+
+  <table>
+    <tr><th>Memory</th><th>Key fact</th><th>Exam question</th></tr>
+    <tr><td><strong>ROM</strong></td><td>Read-only memory — holds firmware/BIOS and <strong>does not change</strong> during the computer's life span (non-volatile)</td><td>Q12</td></tr>
+    <tr><td><strong>L1 cache</strong></td><td><strong>Smallest but fastest</strong> — sits closest to the core; L2 and L3 grow larger and slower in order</td><td>Q13</td></tr>
+    <tr><td><strong>Virtual RAM</strong></td><td>Stored <strong>on a drive</strong> as a <strong>paging file</strong>; extends physical RAM when it runs low</td><td>Q14</td></tr>
+  </table>
+
+  <h2>Two distinctions that carry the rest</h2>
+  <p><strong>Volatile vs non-volatile.</strong> RAM and cache are <em>volatile</em> — they lose their data the instant power is cut. ROM is <em>non-volatile</em> — it keeps its contents without power, which is why it can hold the firmware that boots the machine.</p>
+  <p><strong>Cache beats RAM.</strong> The whole point of L1/L2/L3 cache is that it's faster than main RAM — that's why the CPU checks cache first. Virtual RAM is the opposite trick: when RAM is full, the OS swaps pages out to the drive, trading speed for capacity.</p>
+
+  <section class="quiz" data-quiz-title="Lesson 5 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Read-only memory (ROM)" data-explanation="ROM is read-only — it holds firmware/BIOS and stays fixed for the computer&#x27;s life. RAM and cache are volatile and constantly rewritten.">
+    <p class="quiz-prompt">Which type of memory does not change during the life span of a computer?</p>
+    <div class="quiz-options">
+      <button data-choice="Dynamic RAM">Dynamic RAM</button>
+      <button data-choice="Static RAM">Static RAM</button>
+      <button data-choice="Read-only memory (ROM)">Read-only memory (ROM)</button>
+      <button data-choice="Cache memory">Cache memory</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="L1" data-explanation="L1 cache is closest to the core — smallest and fastest. L2 and L3 are progressively larger and slower, and HDD isn&#x27;t cache at all.">
+    <p class="quiz-prompt">Which cache memory is the smallest but fastest?</p>
+    <div class="quiz-options">
+      <button data-choice="L1">L1</button>
+      <button data-choice="L2">L2</button>
+      <button data-choice="L3">L3</button>
+      <button data-choice="HDD">HDD</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Virtual RAM" data-explanation="Virtual RAM is a paging file on the drive that extends physical RAM when it runs low — disk storage pretending to be memory.">
+    <p class="quiz-prompt">Which memory type is stored on a drive and is referred to as a paging file?</p>
+    <div class="quiz-options">
+      <button data-choice="L1">L1</button>
+      <button data-choice="L2">L2</button>
+      <button data-choice="L3">L3</button>
+      <button data-choice="Virtual RAM">Virtual RAM</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="L1, L2, L3" data-explanation="Cache goes L1 (smallest, fastest, closest to the core) → L2 → L3 (largest, slowest of the caches).">
+    <p class="quiz-prompt">Which correctly orders cache levels from smallest/fastest to largest/slowest?</p>
+    <div class="quiz-options">
+      <button data-choice="L1, L2, L3">L1, L2, L3</button>
+      <button data-choice="L3, L2, L1">L3, L2, L1</button>
+      <button data-choice="L2, L1, L3">L2, L1, L3</button>
+      <button data-choice="L1, L3, L2">L1, L3, L2</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="It loses its data when power is removed" data-explanation="RAM is volatile — it needs power to hold data and loses everything when the machine powers off. ROM is the non-volatile one.">
+    <p class="quiz-prompt">RAM is described as volatile because…</p>
+    <div class="quiz-options">
+      <button data-choice="It keeps data when power is off">It keeps data when power is off</button>
+      <button data-choice="It loses its data when power is removed">It loses its data when power is removed</button>
+      <button data-choice="It never changes">It never changes</button>
+      <button data-choice="It is read-only">It is read-only</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>. Public secondary reference: <a href="https://en.wikipedia.org/wiki/Memory_hierarchy">Memory hierarchy</a> on Wikipedia.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Why is cache faster than RAM?"</em> or <em>"What happens when the paging file fills up?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/memory-hierarchy.html">The Memory Hierarchy: ROM, Cache, RAM, Virtual RAM</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSD vs HDD: The Trade-Offs &middot; Hardware</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Hardware &middot; Lesson 2</p>
+  <h1>SSD vs HDD: The Trade-Offs</h1>
+  <p class="lead">Two ways to store the same bits — one mechanical, one electronic. Learn which one wins on speed, cost, capacity, and endurance so you can answer any "advantage of" question cold.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll be able to answer any <em>"what's an advantage of SSD vs HDD?"</em> question by remembering a single fact — SSDs have <strong>no moving parts</strong> — and deriving the rest of the trade-offs from it.</p>
+  </div>
+
+  <h2>What's different under the hood</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 220" role="img" aria-label="Side-by-side comparison of a hard disk drive (mechanical) and a solid-state drive (electronic)">
+      <rect x="10" y="10" width="200" height="200" rx="10" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="110" y="34" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">HDD</text>
+      <circle cx="110" cy="115" r="55" fill="#e8e2d5" stroke="#8a877f" stroke-width="1.5"/>
+      <circle cx="110" cy="115" r="14" fill="#555555"/>
+      <line x1="180" y1="62" x2="146" y2="82" stroke="#333333" stroke-width="5" stroke-linecap="round"/>
+      <text x="110" y="196" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#555">spinning platters + moving heads</text>
+
+      <rect x="250" y="10" width="200" height="200" rx="10" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="350" y="34" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">SSD</text>
+      <rect x="295" y="55" width="110" height="95" rx="6" fill="#ffffff" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="350" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">NAND</text>
+      <text x="350" y="116" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">flash</text>
+      <rect x="312" y="150" width="8" height="22" fill="#0b5cad"/>
+      <rect x="332" y="150" width="8" height="22" fill="#0b5cad"/>
+      <rect x="352" y="150" width="8" height="22" fill="#0b5cad"/>
+      <rect x="372" y="150" width="8" height="22" fill="#0b5cad"/>
+      <text x="350" y="196" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#555">no moving parts</text>
+    </svg>
+    <figcaption>An HDD stores data magnetically on spinning platters (Lesson 1); an SSD stores data electronically in NAND flash chips.</figcaption>
+  </figure>
+
+  <p>An <strong>HDD</strong> is the mechanical device from <a href="0001-hard-drive-anatomy.html">Lesson 1</a>: spinning platters and an actuator arm that physically moves the read/write heads to where the data lives. An <strong>SSD</strong> has no platters and no heads — data lives in <strong>NAND flash memory</strong>, read and written purely electronically.</p>
+
+  <h2>The trade-off matrix</h2>
+  <p>Nearly every exam question about SSD vs HDD reduces to this table:</p>
+
+  <table>
+    <tr><th>Factor</th><th>SSD</th><th>HDD</th></tr>
+    <tr><td><strong>Data transfer speed</strong></td><td><strong>Wins</strong> — no seek time</td><td>Slow — head must physically move</td></tr>
+    <tr><td><strong>Cost per byte</strong></td><td>Higher</td><td><strong>Wins</strong> — cheaper</td></tr>
+    <tr><td><strong>Capacity per dollar</strong></td><td>Lower</td><td><strong>Wins</strong> — more storage for the money</td></tr>
+    <tr><td><strong>Shock / durability</strong></td><td><strong>Wins</strong> — no moving parts to break</td><td>Fragile — a drop can crash the heads</td></tr>
+    <tr><td><strong>Write endurance</strong></td><td>Finite — flash cells wear out</td><td><strong>Wins</strong> — rewritable far longer</td></tr>
+    <tr><td><strong>Power / heat / noise</strong></td><td><strong>Wins</strong> — less of all three</td><td>More of all three</td></tr>
+  </table>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p><strong>"Unlimited write operations" is never the right answer for SSD.</strong> Flash cells physically wear out after a finite number of write/erase cycles. Neither drive is unlimited — but SSDs are the one with a well-known write-endurance limit.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 2 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Faster data transfer" data-explanation="SSDs have no moving parts and read directly from flash memory, so data transfer is much faster than a mechanical drive.">
+    <p class="quiz-prompt">What is an advantage of solid-state drives (SSD) compared to hard disk drives (HDD)?</p>
+    <div class="quiz-options">
+      <button data-choice="Lower cost per byte">Lower cost per byte</button>
+      <button data-choice="Higher storage capacity by price">Higher storage capacity by price</button>
+      <button data-choice="Unlimited write operations">Unlimited write operations</button>
+      <button data-choice="Faster data transfer">Faster data transfer</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Lower cost per byte" data-explanation="HDDs win on price: magnetic platters cost less per byte than flash, so you get more capacity per dollar.">
+    <p class="quiz-prompt">Which is an advantage of HDD over SSD?</p>
+    <div class="quiz-options">
+      <button data-choice="Faster data transfer">Faster data transfer</button>
+      <button data-choice="Lower cost per byte">Lower cost per byte</button>
+      <button data-choice="No moving parts">No moving parts</button>
+      <button data-choice="Lower power consumption">Lower power consumption</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="It has no moving parts" data-explanation="SSDs have no moving parts — they read and write NAND flash electronically, with no seek time for a physical head to travel.">
+    <p class="quiz-prompt">Why can an SSD transfer data faster than an HDD?</p>
+    <div class="quiz-options">
+      <button data-choice="It stores data magnetically">It stores data magnetically</button>
+      <button data-choice="It has no moving parts">It has no moving parts</button>
+      <button data-choice="It spins faster">It spins faster</button>
+      <button data-choice="It has more read/write heads">It has more read/write heads</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="SSDs wear out after a finite number of writes" data-explanation="Flash cells wear out after a finite number of write/erase cycles, so &#x27;unlimited write operations&#x27; is never an SSD advantage.">
+    <p class="quiz-prompt">Which statement about write operations is true?</p>
+    <div class="quiz-options">
+      <button data-choice="SSDs can be written an unlimited number of times">SSDs can be written an unlimited number of times</button>
+      <button data-choice="SSDs wear out after a finite number of writes">SSDs wear out after a finite number of writes</button>
+      <button data-choice="HDDs can never be rewritten">HDDs can never be rewritten</button>
+      <button data-choice="Write endurance is identical for both">Write endurance is identical for both</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>. Public secondary reference: <a href="https://en.wikipedia.org/wiki/Solid-state_drive">Solid-state drive</a> on Wikipedia.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"What's a hybrid SSHD?"</em> or <em>"How many writes does a typical SSD survive?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/ssd-vs-hdd.html">SSD vs HDD: The Trade-Offs</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

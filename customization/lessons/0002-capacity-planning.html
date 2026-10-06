@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capacity Planning: RAM Arithmetic &middot; Customization</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Customization &middot; Lesson 2</p>
+  <h1>Capacity Planning: RAM Arithmetic</h1>
+  <p class="lead">Simple arithmetic with a twist: always account for the OS, and round down when dividing.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll solve RAM capacity problems the way the OA frames them: <strong>add up all needs, and subtract the OS before dividing</strong>.</p>
+  </div>
+
+  <h2>Two patterns</h2>
+  <p><strong>Pattern 1 — minimum total:</strong> add every need together, including the OS.</p>
+  <p><strong>Pattern 2 — maximum instances:</strong> subtract the OS's share first, then divide what's left by each instance's need, and <strong>round down</strong> (you can't run a fraction of an instance).</p>
+
+  <div class="callout">
+    <p class="callout-title">Worked examples</p>
+    <p><strong>Minimum:</strong> two apps need 4 GB each (8 GB) and the OS needs 4 GB → 4 + 4 + 4 = <strong>12 GB</strong>.<br>
+    <strong>Maximum:</strong> 32 GB total, OS needs 2 GB → 30 GB left. Each instance needs 7 GB → 30 ÷ 7 = 4.28 → <strong>4 instances</strong> (round down).</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 2 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="12 GB" data-explanation="Add everything: 4 + 4 (apps) + 4 (OS) = 12 GB minimum.">
+    <p class="quiz-prompt">Two applications need 4 GB of RAM each, and the OS needs 4 GB. What is the minimum RAM the computer should have?</p>
+    <div class="quiz-options">
+      <button data-choice="4 GB">4 GB</button>
+      <button data-choice="8 GB">8 GB</button>
+      <button data-choice="12 GB">12 GB</button>
+      <button data-choice="16 GB">16 GB</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="4" data-explanation="32 − 2 = 30 GB available; 30 ÷ 7 = 4.28, rounded down to 4 instances.">
+    <p class="quiz-prompt">32 GB RAM, OS needs 2 GB, each instance needs 7 GB. What is the maximum number of instances?</p>
+    <div class="quiz-options">
+      <button data-choice="3">3</button>
+      <button data-choice="4">4</button>
+      <button data-choice="5">5</button>
+      <button data-choice="6">6</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="3" data-explanation="16 − 3 = 13 GB available; 13 ÷ 4 = 3.25, rounded down to 3 VMs.">
+    <p class="quiz-prompt">A computer has 16 GB RAM. The OS needs 3 GB. Each VM needs 4 GB. How many VMs can run?</p>
+    <div class="quiz-options">
+      <button data-choice="2">2</button>
+      <button data-choice="4">4</button>
+      <button data-choice="5">5</button>
+      <button data-choice="3">3</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="The operating system&#x27;s RAM" data-explanation="Always include the OS&#x27;s RAM need in the minimum total — the OS uses RAM too.">
+    <p class="quiz-prompt">When computing a minimum RAM total, you must remember to include…</p>
+    <div class="quiz-options">
+      <button data-choice="The operating system&#x27;s RAM">The operating system's RAM</button>
+      <button data-choice="Only the largest app">Only the largest app</button>
+      <button data-choice="Nothing extra">Nothing extra</button>
+      <button data-choice="Storage space">Storage space</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Subtract the OS, then divide and round down" data-explanation="Subtract the OS&#x27;s share first, then divide the remainder by each instance&#x27;s need and round down.">
+    <p class="quiz-prompt">When computing a maximum instance count, you should…</p>
+    <div class="quiz-options">
+      <button data-choice="Divide total RAM by need">Divide total RAM by need</button>
+      <button data-choice="Subtract the OS, then divide and round down">Subtract the OS, then divide and round down</button>
+      <button data-choice="Round up">Round up</button>
+      <button data-choice="Ignore the OS">Ignore the OS</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354503">WGU course — Customization</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Why round down instead of up?"</em> or <em>"What if the division is exact?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/capacity-planning.html">Capacity Planning: RAM Arithmetic</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

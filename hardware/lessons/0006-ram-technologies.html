@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAM Technologies: DRAM, SRAM, and Clock Signals &middot; Hardware</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Hardware &middot; Lesson 6</p>
+  <h1>RAM Technologies: DRAM, SRAM, and Clock Signals</h1>
+  <p class="lead">Four RAM types that the exam tests as look-alike pairs. Learn the refresh question and the clock question, and Q15 + Q16 become free points.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know which RAM needs refreshing, which one shares a clock, which one doesn't — and you'll get the one you missed (Q15) right every time.</p>
+  </div>
+
+  <h2>DRAM vs SRAM — the refresh question</h2>
+  <p><strong>DRAM (dynamic RAM)</strong> stores each bit as a tiny charge in a <em>capacitor</em>. Capacitors leak, so DRAM must be <strong>refreshed constantly</strong> — thousands of times a second — or it forgets. It's cheap and dense, which is why main memory is DRAM.</p>
+  <p><strong>SRAM (static RAM)</strong> stores each bit in a <em>flip-flop</em> circuit that holds its state without refreshing. It's faster than DRAM but pricier and bulkier per bit — which is why <a href="0005-memory-hierarchy.html">L1/L2/L3 cache</a> is built from SRAM, not DRAM.</p>
+
+  <table>
+    <tr><th></th><th>DRAM (dynamic)</th><th>SRAM (static)</th></tr>
+    <tr><td>Stores bits in…</td><td>Capacitors (leak)</td><td>Flip-flops (hold state)</td></tr>
+    <tr><td>Refresh needed?</td><td><strong>Yes — constantly</strong></td><td>No</td></tr>
+    <tr><td>Speed / cost</td><td>Slower, cheaper</td><td>Faster, pricier</td></tr>
+    <tr><td>Used for</td><td>Main memory (RAM)</td><td>Cache (L1/L2/L3)</td></tr>
+  </table>
+
+  <h2>Synchronous vs asynchronous — the clock question</h2>
+  <p>The exam's matched pair (Q15 and Q16) is really one idea: <em>does this RAM share the CPU's clock or not?</em></p>
+  <ul>
+    <li><strong>Synchronous DRAM (SDRAM)</strong> — <strong>shares a common clock signal</strong> with the computer's system bus. "Synchronous" = same clock, same timing.</li>
+    <li><strong>Asynchronous DRAM</strong> — <strong>independent of the CPU's external clock</strong>. It runs on its own timing and doesn't share that clock signal.</li>
+  </ul>
+
+  <div class="callout">
+    <p class="callout-title">Memory hook</p>
+    <p><strong>Sync = same clock. Async = its own clock.</strong> The question gives you the definition ("shares a clock" / "independent of the clock") and asks for the word — so just match the prefix.</p>
+  </div>
+
+  <h2>DDR SDRAM — double data rate</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 110" role="img" aria-label="Square wave clock signal with data transfers marked on both rising and falling edges">
+      <polyline points="20,70 70,70 70,30 120,30 120,70 170,70 170,30 220,30 220,70 270,70 270,30 320,30 320,70 370,70 370,30 420,30 420,70"
+                fill="none" stroke="#0b5cad" stroke-width="2.5"/>
+      <text x="75" y="22" font-family="sans-serif" font-size="11" fill="#b3261e">↑ data</text>
+      <text x="175" y="22" font-family="sans-serif" font-size="11" fill="#b3261e">↑ data</text>
+      <text x="275" y="22" font-family="sans-serif" font-size="11" fill="#b3261e">↑ data</text>
+      <text x="375" y="22" font-family="sans-serif" font-size="11" fill="#b3261e">↑ data</text>
+      <text x="70" y="98" font-family="sans-serif" font-size="11" fill="#b3261e">↓ data</text>
+      <text x="170" y="98" font-family="sans-serif" font-size="11" fill="#b3261e">↓ data</text>
+      <text x="270" y="98" font-family="sans-serif" font-size="11" fill="#b3261e">↓ data</text>
+      <text x="370" y="98" font-family="sans-serif" font-size="11" fill="#b3261e">↓ data</text>
+    </svg>
+    <figcaption>DDR SDRAM transfers data on both the rising and falling edges of the clock — that's the "double" in double data rate.</figcaption>
+  </figure>
+
+  <p><strong>DDR SDRAM</strong> is synchronous DRAM that transfers data on <em>both</em> edges of the clock signal instead of one, effectively doubling throughput. It's the same "shares a clock" family as SDRAM — just faster.</p>
+
+  <section class="quiz" data-quiz-title="Lesson 6 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Asynchronous DRAM" data-explanation="Asynchronous DRAM runs independently of the CPU&#x27;s external clock — no shared clock signal. Synchronous DRAM is the one that shares the clock.">
+    <p class="quiz-prompt">Which memory type is characterized by its independence from the CPU's external clock?</p>
+    <div class="quiz-options">
+      <button data-choice="DRAM">DRAM</button>
+      <button data-choice="Synchronous DRAM">Synchronous DRAM</button>
+      <button data-choice="Asynchronous DRAM">Asynchronous DRAM</button>
+      <button data-choice="DDR SDRAM">DDR SDRAM</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Synchronous DRAM" data-explanation="Synchronous DRAM is &#x27;synced&#x27; to the system-bus clock — it shares a common clock signal. Asynchronous DRAM is the independent one.">
+    <p class="quiz-prompt">Which memory type shares a common clock signal with the computer's system-bus clock?</p>
+    <div class="quiz-options">
+      <button data-choice="DRAM">DRAM</button>
+      <button data-choice="Synchronous DRAM">Synchronous DRAM</button>
+      <button data-choice="Asynchronous DRAM">Asynchronous DRAM</button>
+      <button data-choice="DDR SDRAM">DDR SDRAM</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Dynamic RAM" data-explanation="Dynamic RAM stores bits in capacitors that leak charge, so it must be refreshed thousands of times per second. Static RAM holds its state without refreshing.">
+    <p class="quiz-prompt">Which RAM type must be constantly refreshed to hold its data?</p>
+    <div class="quiz-options">
+      <button data-choice="Static RAM">Static RAM</button>
+      <button data-choice="Dynamic RAM">Dynamic RAM</button>
+      <button data-choice="ROM">ROM</button>
+      <button data-choice="Cache memory">Cache memory</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Static RAM" data-explanation="Cache is built from SRAM (static RAM) — faster and no refresh needed, at the cost of being pricier per bit.">
+    <p class="quiz-prompt">Which memory technology is typically used for L1/L2/L3 cache?</p>
+    <div class="quiz-options">
+      <button data-choice="Dynamic RAM">Dynamic RAM</button>
+      <button data-choice="Static RAM">Static RAM</button>
+      <button data-choice="Virtual RAM">Virtual RAM</button>
+      <button data-choice="ROM">ROM</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Double data rate" data-explanation="DDR = double data rate — it transfers data on both the rising and falling edges of the clock, effectively doubling throughput.">
+    <p class="quiz-prompt">In DDR SDRAM, "DDR" stands for…</p>
+    <div class="quiz-options">
+      <button data-choice="Double data rate">Double data rate</button>
+      <button data-choice="Dual data register">Dual data register</button>
+      <button data-choice="Dynamic data refresh">Dynamic data refresh</button>
+      <button data-choice="Direct data read">Direct data read</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>. Public secondary reference: <a href="https://en.wikipedia.org/wiki/Dynamic_random-access_memory">Dynamic random-access memory</a> on Wikipedia.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Why do capacitors need refreshing?"</em> or <em>"What's the difference between DDR3 and DDR4?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/ram-technologies.html">RAM Technologies: DRAM, SRAM, and Clock Signals</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

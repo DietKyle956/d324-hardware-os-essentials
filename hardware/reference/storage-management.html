@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storage Management Cheat Card</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Reference &middot; printable</p>
+  <h1>Storage Management Cheat Card</h1>
+</header>
+
+  <table>
+    <tr><th>Layer</th><th>Works in</th><th>Core job</th><th>Not its core job</th></tr>
+    <tr><td><strong>File system interface</strong></td><td>Files &amp; folders</td><td><strong>Access &amp; manage files</strong></td><td>Allocating blocks; security is secondary</td></tr>
+    <tr><td><strong>NVM scheduler</strong></td><td>Memory blocks</td><td><strong>Allocate non-volatile memory</strong></td><td>Performance/security/compatibility are side effects</td></tr>
+  </table>
+
+  <h2>Memory hook</h2>
+  <p><strong>File system = files. NVM scheduler = memory blocks.</strong><br>
+  One gives you files to manage; the other decides where the bits physically go.</p>
+
+  <h2>Key facts</h2>
+  <ul>
+    <li><strong>NVM</strong> = non-volatile memory (keeps data without power — SSD/flash).</li>
+    <li><strong>NVM scheduling</strong> = managing the <em>allocation</em> of that memory.</li>
+    <li><strong>File system interface</strong> = the operations (create/open/read/write/delete) that let the system <em>access and manage files</em>.</li>
+  </ul>
+
+  <footer class="lesson-footer">
+  <p>Full explanation: <a href="../lessons/0003-storage-management.html">Lesson 3 &mdash; Storage Management: NVM Scheduling &amp; the File System Interface</a>. Stuck? Ask your agent for extra practice.</p>
+</footer>
+</article>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storage Management: NVM Scheduling &amp; the File System Interface &middot; Hardware</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Hardware &middot; Lesson 3</p>
+  <h1>Storage Management: NVM Scheduling &amp; the File System Interface</h1>
+  <p class="lead">Two layers of the storage stack that get tested with look-alike questions. Learn which one allocates memory and which one gives you files.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll be able to answer the two storage-management questions from the pre-assessment (Q8 and Q10) — and you'll know exactly why the "performance" and "security" distractors are wrong.</p>
+  </div>
+
+  <h2>The storage stack</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 300" role="img" aria-label="Layered diagram of the storage stack: applications, file system interface, NVM scheduler, and non-volatile memory">
+      <rect x="80" y="8" width="300" height="46" rx="6" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="230" y="36" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Applications / OS</text>
+
+      <text x="230" y="70" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#999">↓</text>
+
+      <rect x="80" y="80" width="300" height="46" rx="6" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="230" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">File system interface</text>
+      <text x="230" y="116" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0b5cad">access &amp; manage files</text>
+
+      <text x="230" y="142" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#999">↓</text>
+
+      <rect x="80" y="152" width="300" height="46" rx="6" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="230" y="172" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0b5cad">NVM scheduler</text>
+      <text x="230" y="188" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0b5cad">allocate non-volatile memory</text>
+
+      <text x="230" y="214" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#999">↓</text>
+
+      <rect x="80" y="224" width="300" height="46" rx="6" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="230" y="252" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Non-volatile memory (SSD / flash)</text>
+    </svg>
+    <figcaption>The two layers sit at different heights: the file system interface works in files, the NVM scheduler works in memory blocks.</figcaption>
+  </figure>
+
+  <h2>NVM scheduling</h2>
+  <p><strong>NVM</strong> stands for <strong>non-volatile memory</strong> — storage that keeps its data when power is removed (the SSD flash from <a href="0002-ssd-vs-hdd.html">Lesson 2</a>).</p>
+  <p><strong>NVM scheduling</strong> is the job of deciding <em>where</em> data gets written on that non-volatile memory. An IT professional uses it to <strong>manage the allocation of nonvolatile memory</strong> — placing and re-arranging data across the device's blocks.</p>
+  <p>Because flash cells wear out after a finite number of writes (Lesson 2's trap), the scheduler spreads writes out evenly — a side benefit is better performance and longer device life, but the <em>core purpose</em> is allocation, not speed.</p>
+
+  <h2>The file system interface</h2>
+  <p>The <strong>file system</strong> organizes raw storage into the files and folders you actually use. Its <strong>interface</strong> is the set of operations it hands to the OS — create, open, read, write, delete, rename.</p>
+  <p>The <strong>primary function of the file system interface is to allow the system to access and manage files.</strong> Permissions and ownership are real, but they sit on top of that primary job — they're not the point of the interface itself.</p>
+
+  <table>
+    <tr><th>Layer</th><th>Works in units of…</th><th>Core job</th><th>Not its core job</th></tr>
+    <tr><td><strong>File system interface</strong></td><td>Files &amp; folders</td><td>Access &amp; manage files</td><td>Allocating memory blocks; security is secondary</td></tr>
+    <tr><td><strong>NVM scheduler</strong></td><td>Memory blocks</td><td>Allocate non-volatile memory</td><td>Performance/security/compatibility are side effects</td></tr>
+  </table>
+
+  <section class="quiz" data-quiz-title="Lesson 3 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="To manage the allocation of nonvolatile memory" data-explanation="NVM scheduling&#x27;s core job is managing how data is allocated across non-volatile memory. Performance, security, and compatibility are side effects, not the purpose.">
+    <p class="quiz-prompt">What does an IT professional use NVM scheduling for?</p>
+    <div class="quiz-options">
+      <button data-choice="To improve the performance of the system">To improve the performance of the system</button>
+      <button data-choice="To enhance the security of the system">To enhance the security of the system</button>
+      <button data-choice="To manage the allocation of nonvolatile memory">To manage the allocation of nonvolatile memory</button>
+      <button data-choice="To improve the compatibility of the system">To improve the compatibility of the system</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="To allow the system to access and manage files" data-explanation="The file system interface is the layer that lets the OS access and manage files — create, open, read, write, delete. Permissions are a feature on top, not the primary function.">
+    <p class="quiz-prompt">What is the primary function of the file system interface?</p>
+    <div class="quiz-options">
+      <button data-choice="To manage security for the operating system and storage devices">To manage security for the operating system and storage devices</button>
+      <button data-choice="To allow the system to access and manage files">To allow the system to access and manage files</button>
+      <button data-choice="To eliminate the need for file permissions and ownership">To eliminate the need for file permissions and ownership</button>
+      <button data-choice="To create a read-only connection between the operating system and storage">To create a read-only connection between the operating system and storage</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Non-volatile memory" data-explanation="NVM = non-volatile memory — storage that retains data even when power is removed, like SSD flash.">
+    <p class="quiz-prompt">NVM is an acronym for…</p>
+    <div class="quiz-options">
+      <button data-choice="Non-volatile memory">Non-volatile memory</button>
+      <button data-choice="Networked virtual memory">Networked virtual memory</button>
+      <button data-choice="Non-variable memory">Non-variable memory</button>
+      <button data-choice="New versioned memory">New versioned memory</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Allocating nonvolatile memory" data-explanation="NVM scheduling allocates non-volatile memory — deciding where blocks go on the device. Creating/naming files and permissions are file system jobs.">
+    <p class="quiz-prompt">Which task belongs to NVM scheduling?</p>
+    <div class="quiz-options">
+      <button data-choice="Creating and naming files">Creating and naming files</button>
+      <button data-choice="Managing file permissions">Managing file permissions</button>
+      <button data-choice="Allocating nonvolatile memory">Allocating nonvolatile memory</button>
+      <button data-choice="Rendering file contents">Rendering file contents</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354185">WGU course — Hardware</a>. Public secondary references: <a href="https://en.wikipedia.org/wiki/File_system">File system</a> and <a href="https://en.wikipedia.org/wiki/Non-volatile_memory">Non-volatile memory</a> on Wikipedia.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"What's wear leveling?"</em> or <em>"How is a directory different from a file?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/storage-management.html">Storage Management: NVM Scheduling &amp; the File System Interface</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

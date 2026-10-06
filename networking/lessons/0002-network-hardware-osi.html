@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Hardware by OSI Layer &middot; Networking</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Networking &middot; Lesson 2</p>
+  <h1>Network Hardware by OSI Layer</h1>
+  <p class="lead">Four devices, two layers. Know what lives at Layer 2 and what provides centralized connectivity.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know a <strong>switch</strong> works at <strong>Layer 2</strong> and provides <strong>centralized connectivity</strong> (Q33) — and how it differs from patch panels, hubs, and routers.</p>
+  </div>
+
+  <h2>The four devices</h2>
+  <table>
+    <tr><th>Device</th><th>OSI layer</th><th>What it does</th></tr>
+    <tr><td><strong>Patch panel</strong></td><td>Layer 1 (physical)</td><td>Passive termination point; organizes cable runs; no intelligence</td></tr>
+    <tr><td><strong>Hub</strong></td><td>Layer 1 (physical)</td><td>Repeats a signal out every port; no addressing</td></tr>
+    <tr><td><strong>Switch</strong></td><td>Layer 2 (data link)</td><td>Forwards frames to the specific port using MAC addresses</td></tr>
+    <tr><td><strong>Router</strong></td><td>Layer 3 (network)</td><td>Routes packets between different networks using IP addresses</td></tr>
+  </table>
+
+  <p>A <strong>switch</strong> operates at <strong>Layer 2</strong>. It learns which device is on which port by MAC address and sends each frame only to the intended port. That makes it the device that provides <strong>centralized connectivity</strong> — many devices plug into one switch and reach each other efficiently.</p>
+
+  <p>A <strong>router</strong> works one layer up, at <strong>Layer 3</strong>, moving packets <em>between</em> networks using IP addresses. A <strong>hub</strong> is a dumb Layer 1 repeater that floods every port. A <strong>patch panel</strong> isn't even powered — it's just a tidy place to terminate cables.</p>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>"Layer 2 + centralized connectivity" = <strong>switch</strong>. Hubs also give you a central box, but they're Layer 1 and don't forward by address — they flood. Routers are Layer 3 and connect <em>between</em> networks, not devices within one.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 2 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Switches" data-explanation="A switch works at Layer 2, forwards frames by MAC address, and provides centralized connectivity. Hubs are Layer 1, routers are Layer 3, and patch panels are passive.">
+    <p class="quiz-prompt">Which type of network hardware works at layer 2 and provides centralized connectivity?</p>
+    <div class="quiz-options">
+      <button data-choice="Patch panels">Patch panels</button>
+      <button data-choice="Hubs">Hubs</button>
+      <button data-choice="Switches">Switches</button>
+      <button data-choice="Routers">Routers</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Router" data-explanation="A router works at Layer 3 and moves packets between networks using IP addresses.">
+    <p class="quiz-prompt">Which device routes packets between different networks using IP addresses?</p>
+    <div class="quiz-options">
+      <button data-choice="Switch">Switch</button>
+      <button data-choice="Hub">Hub</button>
+      <button data-choice="Patch panel">Patch panel</button>
+      <button data-choice="Router">Router</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Hub" data-explanation="A hub is a Layer 1 repeater that floods the signal out all ports — no MAC addressing. A switch forwards selectively.">
+    <p class="quiz-prompt">Which device repeats a signal out every port with no addressing intelligence?</p>
+    <div class="quiz-options">
+      <button data-choice="Switch">Switch</button>
+      <button data-choice="Hub">Hub</button>
+      <button data-choice="Router">Router</button>
+      <button data-choice="Patch panel">Patch panel</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Patch panel" data-explanation="A patch panel is passive — it&#x27;s a tidy termination point for cable runs, with no electronics or intelligence.">
+    <p class="quiz-prompt">Which device is a passive, unpowered termination point for organizing cables?</p>
+    <div class="quiz-options">
+      <button data-choice="Patch panel">Patch panel</button>
+      <button data-choice="Hub">Hub</button>
+      <button data-choice="Switch">Switch</button>
+      <button data-choice="Router">Router</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Layer 2" data-explanation="A switch operates at Layer 2 (data link), forwarding frames by MAC address.">
+    <p class="quiz-prompt">At which OSI layer does a switch operate?</p>
+    <div class="quiz-options">
+      <button data-choice="Layer 1">Layer 1</button>
+      <button data-choice="Layer 2">Layer 2</button>
+      <button data-choice="Layer 3">Layer 3</button>
+      <button data-choice="Layer 4">Layer 4</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354443">WGU course — Networking</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"What's a MAC address?"</em> or <em>"Why is a hub worse than a switch?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/network-hardware-osi.html">Network Hardware by OSI Layer</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

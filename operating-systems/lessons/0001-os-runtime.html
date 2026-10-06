@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where the OS Lives at Runtime &middot; Operating Systems</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Operating Systems &middot; Lesson 1</p>
+  <h1>Where the OS Lives at Runtime</h1>
+  <p class="lead">Opening the Operating Systems unit. Four components — CPU, RAM, GPU, SSD — and one clear division of labor.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know exactly which component <em>holds</em> the OS's system code and running programs (RAM), which <em>executes</em> them (CPU), and why it isn't the SSD.</p>
+  </div>
+
+  <h2>The runtime pipeline</h2>
+
+  <figure>
+    <svg viewBox="0 0 460 120" role="img" aria-label="Flow from SSD storage to RAM holding code to CPU executing">
+      <rect x="10" y="35" width="110" height="50" rx="8" fill="#f3efe6" stroke="#8a877f" stroke-width="1.5"/>
+      <text x="65" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">SSD</text>
+      <text x="65" y="73" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#555">storage</text>
+
+      <text x="135" y="55" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">loads</text>
+      <line x1="120" y1="60" x2="165" y2="60" stroke="#999999" stroke-width="2"/>
+
+      <rect x="170" y="35" width="120" height="50" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="230" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">RAM</text>
+      <text x="230" y="73" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0b5cad">holds code</text>
+
+      <text x="305" y="55" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">executes</text>
+      <line x1="290" y1="60" x2="335" y2="60" stroke="#999999" stroke-width="2"/>
+
+      <rect x="340" y="35" width="110" height="50" rx="8" fill="#eaf1f8" stroke="#0b5cad" stroke-width="1.5"/>
+      <text x="395" y="57" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0b5cad">CPU</text>
+      <text x="395" y="73" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0b5cad">executes</text>
+    </svg>
+    <figcaption>Code starts on the SSD, gets loaded into RAM, and is executed by the CPU.</figcaption>
+  </figure>
+
+  <p>When you power on, the operating system is copied from long-term storage into <strong>RAM</strong>. RAM is the <strong>working memory</strong> — it holds the OS's system code and every running program while they execute.</p>
+
+  <h2>Four components, four jobs</h2>
+  <table>
+    <tr><th>Component</th><th>Job</th><th>Analogy</th></tr>
+    <tr><td><strong>CPU</strong></td><td>Executes instructions</td><td>The worker</td></tr>
+    <tr><td><strong>RAM</strong></td><td><strong>Holds</strong> running code and data</td><td>The workbench</td></tr>
+    <tr><td><strong>GPU</strong></td><td>Renders graphics (specialized math)</td><td>The illustrator</td></tr>
+    <tr><td><strong>SSD</strong></td><td>Long-term, non-volatile storage</td><td>The filing cabinet</td></tr>
+  </table>
+
+  <div class="callout">
+    <p class="callout-title">Why RAM, not the SSD?</p>
+    <p>RAM is far faster than the SSD — fast enough to keep up with the CPU. But RAM is <em>volatile</em> (it forgets on power-off), so the permanent copy stays on the SSD and is loaded into RAM each boot. Speed is why code runs from RAM, not from storage.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 1 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Random access memory (RAM)" data-explanation="RAM is the working memory that holds the OS&#x27;s system code and running programs while they execute. The CPU processes, the GPU renders, and the SSD stores.">
+    <p class="quiz-prompt">What is used by the operating system to hold its system code and other programs?</p>
+    <div class="quiz-options">
+      <button data-choice="Central processing unit (CPU)">Central processing unit (CPU)</button>
+      <button data-choice="Random access memory (RAM)">Random access memory (RAM)</button>
+      <button data-choice="Graphics processing unit (GPU)">Graphics processing unit (GPU)</button>
+      <button data-choice="Solid-state drive (SSD)">Solid-state drive (SSD)</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="CPU" data-explanation="The CPU (central processing unit) executes instructions. RAM holds them, the GPU renders graphics, and the SSD stores data.">
+    <p class="quiz-prompt">Which component executes program instructions?</p>
+    <div class="quiz-options">
+      <button data-choice="RAM">RAM</button>
+      <button data-choice="CPU">CPU</button>
+      <button data-choice="GPU">GPU</button>
+      <button data-choice="SSD">SSD</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="SSD" data-explanation="The SSD (solid-state drive) is non-volatile storage — it keeps data when power is off. RAM is volatile working memory.">
+    <p class="quiz-prompt">Which component is long-term, non-volatile storage?</p>
+    <div class="quiz-options">
+      <button data-choice="RAM">RAM</button>
+      <button data-choice="CPU">CPU</button>
+      <button data-choice="GPU">GPU</button>
+      <button data-choice="SSD">SSD</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="RAM is faster than storage" data-explanation="RAM is far faster than the SSD/HDD, so the OS copies code into RAM to execute it. RAM is volatile and smaller than storage — speed is the reason.">
+    <p class="quiz-prompt">Why does the OS copy programs into RAM before running them?</p>
+    <div class="quiz-options">
+      <button data-choice="RAM is faster than storage">RAM is faster than storage</button>
+      <button data-choice="RAM is non-volatile">RAM is non-volatile</button>
+      <button data-choice="RAM is larger than storage">RAM is larger than storage</button>
+      <button data-choice="RAM never loses data">RAM never loses data</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354139">WGU course — Operating Systems</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"What happens to RAM when I shut down?"</em> or <em>"Why can't the CPU just read from the SSD directly?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/os-runtime.html">Where the OS Lives at Runtime</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

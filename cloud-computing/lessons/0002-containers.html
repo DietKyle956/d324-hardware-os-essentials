@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Containers: Process Isolation and the Shared Host OS &middot; Cloud Computing</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Cloud Computing &middot; Lesson 2</p>
+  <h1>Containers: Process Isolation and the Shared Host OS</h1>
+  <p class="lead">Containers are light because they share one OS and isolate at the process level — not the machine level.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know containers use <strong>process isolation</strong> (Q57) and <strong>share the same host operating system</strong> (Q58) — both of which you missed.</p>
+  </div>
+
+  <h2>What makes a container a container</h2>
+  <table>
+    <tr><th>Trait</th><th>Container</th><th>Virtual machine</th></tr>
+    <tr><td><strong>Isolation</strong></td><td><strong>Process-level</strong></td><td>Machine-level (full virtual hardware)</td></tr>
+    <tr><td><strong>OS</strong></td><td><strong>Shares the host OS</strong></td><td>Each VM has its own guest OS</td></tr>
+    <tr><td><strong>Overhead</strong></td><td>Lightweight, fast</td><td>Heavier, slower</td></tr>
+  </table>
+
+  <p>Every virtualized container uses <strong>process isolation</strong> — each container's processes are walled off from the others and the host, but they all run on the <strong>same host operating system</strong> kernel. There's no separate guest OS per container, which is why containers start fast and use few resources.</p>
+
+  <p>A <strong>virtual machine</strong> is different: it has <strong>machine-level isolation</strong> and runs its own <strong>guest operating system</strong> on virtualized hardware.</p>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>Two facts define containers: <strong>process isolation</strong> (not machine isolation) and <strong>sharing the host OS</strong> (not a dedicated guest OS). "Machine-level isolation" and "dedicated guest OS" describe VMs — flip them and you've answered wrong.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 2 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Process" data-explanation="Containers use process isolation — each container&#x27;s processes are isolated from others and the host. Machine isolation is a VM trait.">
+    <p class="quiz-prompt">Which type of isolation do all virtualized containers employ?</p>
+    <div class="quiz-options">
+      <button data-choice="Process">Process</button>
+      <button data-choice="Machine">Machine</button>
+      <button data-choice="System library">System library</button>
+      <button data-choice="Host operating system">Host operating system</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Containers share the same host operating system" data-explanation="Containers share the same host operating system. They use process (not machine) isolation and don&#x27;t require dedicated virtual processors.">
+    <p class="quiz-prompt">What is a characteristic of virtualized containers?</p>
+    <div class="quiz-options">
+      <button data-choice="Containers share the same host operating system">Containers share the same host operating system</button>
+      <button data-choice="Containers have machine-level isolation">Containers have machine-level isolation</button>
+      <button data-choice="Containers require dedicated virtual processors">Containers require dedicated virtual processors</button>
+      <button data-choice="Containers may not access network resources">Containers may not access network resources</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="A virtual machine" data-explanation="A virtual machine runs its own guest OS on virtualized hardware. Containers share the host OS.">
+    <p class="quiz-prompt">Which has its own guest operating system?</p>
+    <div class="quiz-options">
+      <button data-choice="A container">A container</button>
+      <button data-choice="A virtual machine">A virtual machine</button>
+      <button data-choice="A process">A process</button>
+      <button data-choice="A thread">A thread</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="They share the host OS and avoid a separate guest OS" data-explanation="Containers share the host OS and isolate at the process level, so there&#x27;s no separate guest OS to boot.">
+    <p class="quiz-prompt">Why are containers lighter and faster to start than VMs?</p>
+    <div class="quiz-options">
+      <button data-choice="They have their own OS">They have their own OS</button>
+      <button data-choice="They use more RAM">They use more RAM</button>
+      <button data-choice="They share the host OS and avoid a separate guest OS">They share the host OS and avoid a separate guest OS</button>
+      <button data-choice="They run on bare metal">They run on bare metal</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Virtual machines" data-explanation="VMs provide machine-level isolation (full virtual hardware). Containers provide process isolation.">
+    <p class="quiz-prompt">"Machine-level isolation" is a trait of…</p>
+    <div class="quiz-options">
+      <button data-choice="Virtual machines">Virtual machines</button>
+      <button data-choice="Containers">Containers</button>
+      <button data-choice="Text editors">Text editors</button>
+      <button data-choice="Web servers">Web servers</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354530">WGU course — Cloud Computing</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Can a container run a different OS than the host?"</em> or <em>"What's Docker's role here?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/containers.html">Containers: Process Isolation and the Shared Host OS</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

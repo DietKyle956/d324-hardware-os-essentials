@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authentication and Defense &middot; Non-functional Requirements</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<article class="lesson">
+
+  <header>
+  <p class="course-mark">Non-functional Requirements &middot; Lesson 3</p>
+  <h1>Authentication and Defense</h1>
+  <p class="lead">Centralized logins and the two intrusion systems. Know which one is passive.</p>
+</header>
+
+  <div class="callout">
+    <p class="callout-title">The win</p>
+    <p>By the end of this lesson you'll know a <strong>Domain Controller</strong> is the centralized authentication server (Q23), and an <strong>IDS</strong> is the passive defender (Q24) — while an IPS acts.</p>
+  </div>
+
+  <h2>Centralized authentication</h2>
+  <p>A <strong>Domain Controller</strong> is the Windows server that centralizes <strong>authentication</strong>. Users log in once and the domain controller validates their credentials against a central directory, rather than each computer keeping its own user list.</p>
+
+  <h2>IDS vs IPS</h2>
+  <table>
+    <tr><th>Device</th><th>Behavior</th><th>Position</th></tr>
+    <tr><td><strong>IDS</strong> (intrusion detection system)</td><td><strong>Passive</strong> — watches and alerts, doesn't block</td><td>Monitors a copy of traffic</td></tr>
+    <tr><td><strong>IPS</strong> (intrusion prevention system)</td><td><strong>Active</strong> — detects and blocks/prevents</td><td>Sits inline in the traffic path</td></tr>
+  </table>
+
+  <p>The word to remember: an <strong>IDS</strong> only <strong>detects</strong> and alerts — it offers <strong>passive protection</strong>. An <strong>IPS</strong> <strong>prevents</strong>, actively dropping malicious traffic as it passes through.</p>
+
+  <div class="callout">
+    <p class="callout-title">The trap</p>
+    <p>"Passive protection" = <strong>IDS</strong> (detect + alert only). "Prevents/blocks" = <strong>IPS</strong>. The letters tell you the job: <strong>D</strong>etection vs <strong>P</strong>revention.</p>
+  </div>
+
+  <section class="quiz" data-quiz-title="Lesson 3 quiz">
+  <h2 id="quiz">Practice: solve these from memory</h2>
+  <p>Answer each question from memory <em>before</em> clicking.</p>
+
+  <div class="quiz-q" data-answer="Domain Controller" data-explanation="A Domain Controller centralizes authentication — users validate against it. The others are directory tools or non-Windows solutions.">
+    <p class="quiz-prompt">Which Windows tool is referred to as a centralized authentication server?</p>
+    <div class="quiz-options">
+      <button data-choice="Domain Controller">Domain Controller</button>
+      <button data-choice="Directory Utility">Directory Utility</button>
+      <button data-choice="Samba">Samba</button>
+      <button data-choice="Apache Directory">Apache Directory</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Intrusion detection system (IDS)" data-explanation="An IDS (intrusion detection system) is passive — it monitors and alerts without blocking. An IPS actively prevents, which is not passive.">
+    <p class="quiz-prompt">Which device offers passive protection against attacks on network- and cloud-based resources?</p>
+    <div class="quiz-options">
+      <button data-choice="Intrusion prevention system (IPS)">Intrusion prevention system (IPS)</button>
+      <button data-choice="Intrusion detection system (IDS)">Intrusion detection system (IDS)</button>
+      <button data-choice="Unified threat management (UTM)">Unified threat management (UTM)</button>
+      <button data-choice="Remote access service (RAS)">Remote access service (RAS)</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="IPS" data-explanation="An IPS (prevention) sits inline and actively drops malicious traffic. An IDS only detects and alerts.">
+    <p class="quiz-prompt">Which device actively blocks malicious traffic inline?</p>
+    <div class="quiz-options">
+      <button data-choice="IPS">IPS</button>
+      <button data-choice="IDS">IDS</button>
+      <button data-choice="Domain Controller">Domain Controller</button>
+      <button data-choice="Patch panel">Patch panel</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Detection" data-explanation="IDS = Intrusion Detection System — it detects and alerts (passive).">
+    <p class="quiz-prompt">The "D" in IDS stands for…</p>
+    <div class="quiz-options">
+      <button data-choice="Domain">Domain</button>
+      <button data-choice="Detection">Detection</button>
+      <button data-choice="Prevention">Prevention</button>
+      <button data-choice="Defense">Defense</button>
+    </div>
+  </div>
+
+  <div class="quiz-q" data-answer="Centralizes user authentication" data-explanation="A Domain Controller centralizes authentication — it validates user credentials against a central directory.">
+    <p class="quiz-prompt">What does a Domain Controller do?</p>
+    <div class="quiz-options">
+      <button data-choice="Routes packets between networks">Routes packets between networks</button>
+      <button data-choice="Blocks malware inline">Blocks malware inline</button>
+      <button data-choice="Centralizes user authentication">Centralizes user authentication</button>
+      <button data-choice="Balances load across servers">Balances load across servers</button>
+    </div>
+  </div>
+
+  </section>
+
+<h2>Go deeper</h2>
+  <p>Primary source (the material your assessment is drawn from): <a href="https://lrps.wgu.edu/provision/443354305">WGU course — Non-functional Requirements</a>.</p>
+
+  <div class="callout">
+    <p class="callout-title">Ask a follow-up</p>
+    <p>Anything unclear? Your agent is your teacher. Try: <em>"Why would an org choose IDS over IPS?"</em> or <em>"What's Active Directory?"</em></p>
+  </div>
+
+  <footer class="lesson-footer">
+  <p>Cheat sheet: <a href="../reference/authentication-defense.html">Authentication and Defense</a>. Stuck on anything here? Ask your agent &mdash; it can re-explain any concept, generate extra practice questions, or walk through an example step by step.</p>
+</footer>
+
+</article>
+<script src="../../assets/quiz.js"></script>
+<script src="../../assets/nav.js"></script>
+</body>
+</html>

@@ -1,53 +1,77 @@
-/* quiz.js — reusable multiple-choice quiz component for the D324 course.
+/* ==========================================================================
+   Quiz widget - reusable across all lessons.
+   Usage: write plain HTML blocks, this script wires them up.
 
-   Markup contract:
-     <div class="quiz" data-answer="0">
-       <div class="quiz-q">Question text</div>
-       <button class="quiz-opt" data-why="why this is right">Option A</button>
-       <button class="quiz-opt" data-why="why this is right">Option B</button>
+   <div class="quiz-q" data-answer="O(n)" data-explanation="Why the answer is right.">
+     <p class="quiz-prompt">Prompt text</p>
+     <pre><code>...snippet...</code></pre>   (optional)
+     <div class="quiz-options">
+       <button data-choice="O(1)">O(1)</button>
        ...
-       <div class="quiz-feedback" hidden></div>
      </div>
+   </div>
 
-   `data-answer` is the 0-based index of the correct option.
-   Put the explanation on the CORRECT option's `data-why`.
-   Feedback is shown immediately on click; one attempt per question. */
+   Wrap questions in <section class="quiz" data-quiz-title="...">
+   and a live score line is added automatically.
+   ========================================================================== */
+
 (function () {
-  function initQuiz(quiz) {
-    var answer = parseInt(quiz.getAttribute('data-answer'), 10);
-    var opts = Array.prototype.slice.call(quiz.querySelectorAll('.quiz-opt'));
-    var feedback = quiz.querySelector('.quiz-feedback');
-    if (isNaN(answer) || opts.length === 0) return;
-    var answered = false;
+  "use strict";
 
-    opts.forEach(function (btn, i) {
-      btn.addEventListener('click', function () {
-        if (answered) return;
-        answered = true;
-        opts.forEach(function (b, j) {
-          b.classList.add(j === answer ? 'is-correct' : 'is-incorrect');
-          b.disabled = true;
+  document.querySelectorAll(".quiz").forEach(function (quizEl) {
+    var questions = quizEl.querySelectorAll(".quiz-q");
+    var scoreLine = document.createElement("p");
+    scoreLine.className = "quiz-score";
+    scoreLine.setAttribute("aria-live", "polite");
+    quizEl.appendChild(scoreLine);
+
+    var answered = 0;
+    var correct = 0;
+
+    function updateScore() {
+      if (answered === 0) {
+        scoreLine.textContent =
+          questions.length + " questions - answer one at a time";
+      } else {
+        scoreLine.textContent = correct + " of " + answered + " answered right";
+      }
+    }
+
+    questions.forEach(function (q, i) {
+      var answer = q.getAttribute("data-answer");
+      var explanation = q.getAttribute("data-explanation") || "";
+      var buttons = q.querySelectorAll(".quiz-options button");
+      var feedback = document.createElement("p");
+      feedback.className = "quiz-feedback";
+      feedback.hidden = true;
+      q.appendChild(feedback);
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          if (q.classList.contains("quiz-answered")) return;
+
+          var choice = btn.getAttribute("data-choice");
+          var isRight = choice === answer;
+          q.classList.add("quiz-answered");
+          answered += 1;
+          if (isRight) correct += 1;
+
+          buttons.forEach(function (b) {
+            b.disabled = true;
+            if (b.getAttribute("data-choice") === answer) {
+              b.classList.add("correct");
+            }
+          });
+          if (!isRight) btn.classList.add("wrong");
+
+          feedback.hidden = false;
+          feedback.classList.add(isRight ? "correct" : "wrong");
+          feedback.textContent = explanation;
+          updateScore();
         });
-        var why = opts[answer].getAttribute('data-why') || '';
-        if (i === answer) {
-          feedback.textContent = 'Correct. ' + why;
-          feedback.className = 'quiz-feedback correct';
-        } else {
-          feedback.textContent = 'Not quite. ' + why;
-          feedback.className = 'quiz-feedback incorrect';
-        }
-        if (feedback) feedback.hidden = false;
       });
     });
-  }
 
-  function scan() {
-    Array.prototype.forEach.call(document.querySelectorAll('.quiz'), initQuiz);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', scan);
-  } else {
-    scan();
-  }
+    updateScore();
+  });
 })();
